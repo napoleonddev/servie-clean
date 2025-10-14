@@ -197,7 +197,7 @@ const PriceSection = () => {
               <Select.Positioner>
                 <Select.Content>
                   {framework1.items.map((el) => (
-                    <Select.Item item={el} key={el.value} p={"10px"}>
+                    <Select.Item item={el} key={el.label} p={"10px"}>
                       {el.label}
                       <Select.ItemIndicator />
                     </Select.Item>
@@ -235,7 +235,7 @@ const PriceSection = () => {
                   <Select.Positioner>
                     <Select.Content>
                       {framework6.items.map((el) => (
-                        <Select.Item item={el} key={el.value} p={"10px"}>
+                        <Select.Item item={el} key={el.label} p={"10px"}>
                           {el.label}
                           <Select.ItemIndicator />
                         </Select.Item>
@@ -270,7 +270,7 @@ const PriceSection = () => {
                   <Select.Positioner>
                     <Select.Content>
                       {framework7.items.map((el) => (
-                        <Select.Item item={el} key={el.value} p={"10px"}>
+                        <Select.Item item={el} key={el.label} p={"10px"}>
                           {el.label}
                           <Select.ItemIndicator />
                         </Select.Item>
@@ -310,7 +310,7 @@ const PriceSection = () => {
                   <Select.Positioner>
                     <Select.Content>
                       {framework2.items.map((el) => (
-                        <Select.Item item={el} key={el.value} p={"10px"}>
+                        <Select.Item item={el} key={el.label} p={"10px"}>
                           {el.label}
                           <Select.ItemIndicator />
                         </Select.Item>
@@ -345,7 +345,7 @@ const PriceSection = () => {
                   <Select.Positioner>
                     <Select.Content>
                       {framework3.items.map((el) => (
-                        <Select.Item item={el} key={el.value} p={"10px"}>
+                        <Select.Item item={el} key={el.label} p={"10px"}>
                           {el.label}
                           <Select.ItemIndicator />
                         </Select.Item>
@@ -383,7 +383,7 @@ const PriceSection = () => {
               <Select.Positioner>
                 <Select.Content>
                   {framework4.items.map((el) => (
-                    <Select.Item item={el} key={el.value} p={"10px"}>
+                    <Select.Item item={el} key={el.label} p={"10px"}>
                       {el.label}
                       <Select.ItemIndicator />
                     </Select.Item>
@@ -419,7 +419,7 @@ const PriceSection = () => {
               <Select.Positioner>
                 <Select.Content>
                   {framework5.items.map((el) => (
-                    <Select.Item item={el} key={el.value} p={"10px"}>
+                    <Select.Item item={el} key={el.label} p={"10px"}>
                       {el.label}
                       <Select.ItemIndicator />
                     </Select.Item>
