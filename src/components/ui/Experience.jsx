@@ -37,7 +37,7 @@ const Experience = () => {
             </Box>
             <Text>Affordable Price </Text>
           </HStack>
-          <HStack
+          {/* <HStack
             bgColor={"#fff"}
             p="8px"
             borderRadius="16px"
@@ -60,7 +60,7 @@ const Experience = () => {
               <Image src="/coin-dollar.png" />
             </Box>
             <Text>Affordable Price </Text>
-          </HStack>
+          </HStack> */}
           <Image
             src="/cleaning-man.png"
             borderRadius={"40px"}
@@ -183,7 +183,7 @@ const Experience = () => {
         </Box>
         <Box flex={1}>
           <Box>
-            <Text fontWeight={700} fontSize={"45px"} color="#04090D">
+            <Text fontWeight={700} fontSize={{ base: "25px", md: "45px" }} textAlign={{ base: 'center', md: 'left' }} color="#04090D">
               We Are Very Experienced In Cleaning Service
             </Text>
             <Text fontWeight={400} fontSize={"18px"} color="#7B7B7B">

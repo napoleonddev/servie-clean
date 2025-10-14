@@ -100,6 +100,7 @@ const Featured = () => {
                 border={"1px solid #DFDFDF"}
                 p={4}
                 mb={4}
+                w={{ base: "full", md: "360px" }}
               >
                 <VStack align={"start"}>
                   <HStack>

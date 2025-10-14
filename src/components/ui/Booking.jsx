@@ -13,13 +13,12 @@ const Booking = () => {
         px="60px"
         py='80px'
         pos={"relative"}
-        mt='120px'
         mb='60px'
         bgColor={'#36B8640D'}
       >
         <Box flex={1}>
           <Box>
-            <Text fontWeight={700} fontSize={"45px"} color="#04090D">
+            <Text fontWeight={700} fontSize={{ base: "25px", md: "45px" }} textAlign={{ base: 'center', md: 'left' }}  color="#04090D">
               Step By Step Guide To Book Your Service
             </Text>
             <Text fontWeight={400} fontSize={"18px"} color="#7B7B7B">
@@ -111,8 +110,8 @@ const Booking = () => {
             borderRadius="16px"
             gap="10px"
             pos={"absolute"}
-            bottom={380}
-            left={70}
+            bottom={300}
+            left={10}
             display={{ base: "flex", md: "none" }}
             boxShadow={"0px 4px 10px rgba(0, 0, 0, 0.15)"}
           >
@@ -165,7 +164,7 @@ const Booking = () => {
             gap="10px"
             pos={"absolute"}
             bottom={110}
-            right={10}
+            right={5}
             display={{ base: "flex", md: "none" }}
             boxShadow={"0px 4px 10px rgba(0, 0, 0, 0.15)"}
           >

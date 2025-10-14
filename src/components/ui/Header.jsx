@@ -23,18 +23,14 @@ import { FaBell } from "react-icons/fa";
 import DarkModeToggle from "./DarkModeToggle";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { Portal } from "@chakra-ui/react";
+import { WiTime9 } from "react-icons/wi";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
   const [close, setClose] = useState(false);
 
   return (
-    <Box
-      bg="#fff"
-      
-      px={{ base: 4, md: '60px' }}
-      py={{ base: 4, md: '15px' }}
-    >
+    <Box bg="#fff" px={{ base: 4, md: "60px" }} py={{ base: 4, md: "15px" }}>
       <Box display={{ base: "none", md: "block" }}>
         <Flex justify={"space-between"} align={"center"} gap="20px">
           {" "}
@@ -42,13 +38,24 @@ const Header = () => {
             {" "}
             <Image src="/logo.png" alt="Servie Clean Logo" />{" "}
           </Box>{" "}
-          <HStack>
-            {" "}
-            <IconButton className="green" color="#fff" p="10px">
+          <Flex gap="10px">
+            <HStack>
+              <WiTime9 color="#36B864" size="25px" />
+              <Box>
+                <Text fontSize={"12px"}>Working Hours</Text>
+                <Text fontSize={"12px"} fontWeight={600}>
+                  Mon - Sat: 08.00am - 06.00pm
+                </Text>
+              </Box>
+            </HStack>{" "}
+            <HStack>
               {" "}
-              <LuPhone /> <Text ml="5px">08 6383 8002</Text>{" "}
-            </IconButton>{" "}
-          </HStack>{" "}
+              <IconButton className="green" color="#fff" p="10px">
+                {" "}
+                <LuPhone /> <Text ml="5px">08 6383 8002</Text>{" "}
+              </IconButton>{" "}
+            </HStack>{" "}
+          </Flex>
           <Flex gap="30px" align={"center"}>
             {" "}
             <Link href={"/"}>Home</Link> <Link href={"/"}>About us</Link>{" "}
@@ -64,7 +71,7 @@ const Header = () => {
                 <FaBell /> <Text ml="5px">BOOK NOW</Text>{" "}
               </IconButton>{" "}
             </HStack>{" "}
-            <DarkModeToggle />{" "}
+            {/* <DarkModeToggle />{" "} */}
           </Flex>{" "}
         </Flex>
       </Box>
@@ -109,7 +116,7 @@ const Header = () => {
                 <Text ml="5px">BOOK NOW</Text>
               </IconButton>
 
-              <DarkModeToggle />
+              {/* <DarkModeToggle /> */}
             </HStack>
             <Drawer.Trigger asChild>
               <Button variant="outline" size="sm">
@@ -121,7 +128,7 @@ const Header = () => {
             <Drawer.Backdrop />
             <Drawer.Positioner>
               <Drawer.Content>
-                <DrawerBody p={6}>
+                <DrawerBody bgColor={"#fff"} p={6}>
                   <VStack spacing={6} align="start" mt={10}>
                     {/* Nav Links */}
                     <Link
@@ -172,7 +179,7 @@ const Header = () => {
                     </IconButton>
 
                     {/* Dark Mode Toggle */}
-                    <DarkModeToggle />
+                    {/* <DarkModeToggle /> */}
                   </VStack>
                 </DrawerBody>
                 <Drawer.CloseTrigger asChild>

@@ -7,6 +7,7 @@ import Featured from "@/components/ui/Featured";
 import Team from "@/components/ui/Team";
 import Testimonails from "@/components/ui/Testimonails";
 import Footer from "@/components/ui/Footer";
+import PriceSection from "@/components/ui/PrcieSection";
 
 export default function Home() {
   return (
@@ -15,8 +16,8 @@ export default function Home() {
       <Hero />
       <Service />
       <Experience />
+      <PriceSection />
       <Booking />
-      <Featured />
       <Team />
       <Testimonails />
       <Footer />
