@@ -171,6 +171,7 @@ const PriceSection = () => {
         bgColor={"#fff"}
         p="12px"
         borderRadius={"16px"}
+        flexDir={{ base: 'column', md: 'row' }}
       >
         <Box>
           <Select.Root
@@ -184,7 +185,7 @@ const PriceSection = () => {
               <Select.Trigger>
                 <Select.ValueText
                   placeholder={framework1.items[0].label}
-                  w={"160px"}
+                  w={{ base: '210px', md: "160px" }}
                   p="8px"
                   color={"#000"}
                 />
@@ -222,7 +223,7 @@ const PriceSection = () => {
                   <Select.Trigger>
                     <Select.ValueText
                       placeholder={framework6.items[0].label}
-                      w={"160px"}
+                      w={{ base: '210px', md: "160px" }}
                       p="8px"
                       color={"#000"}
                     />
@@ -257,7 +258,7 @@ const PriceSection = () => {
                   <Select.Trigger>
                     <Select.ValueText
                       placeholder={framework7.items[0].label}
-                      w={"160px"}
+                      w={{ base: '210px', md: "160px" }}
                       p="8px"
                       color={"#000"}
                     />
@@ -297,7 +298,7 @@ const PriceSection = () => {
                   <Select.Trigger>
                     <Select.ValueText
                       placeholder={framework2.items[0].label}
-                      w={"160px"}
+                      w={{ base: '210px', md: "160px" }}
                       p="8px"
                       color={"#000"}
                     />
@@ -332,7 +333,7 @@ const PriceSection = () => {
                   <Select.Trigger>
                     <Select.ValueText
                       placeholder={framework3.items[0].label}
-                      w={"160px"}
+                      w={{ base: '210px', md: "160px" }}
                       p="8px"
                       color={"#000"}
                     />
@@ -370,7 +371,7 @@ const PriceSection = () => {
               <Select.Trigger>
                 <Select.ValueText
                   placeholder={framework4.items[0].label}
-                  w={"160px"}
+                  w={{ base: '210px', md: "160px" }}
                   p="8px"
                   color={"#000"}
                 />
@@ -406,7 +407,7 @@ const PriceSection = () => {
               <Select.Trigger>
                 <Select.ValueText
                   placeholder={framework5.items[0].label}
-                  w={"160px"}
+                  w={{ base: '210px', md: "160px" }}
                   p="8px"
                   color={"#000"}
                 />
