@@ -22,8 +22,7 @@ const Booking = () => {
               Step By Step Guide To Book Your Service
             </Text>
             <Text fontWeight={400} fontSize={"18px"} color="#7B7B7B">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit lorem
-              sagittis, proin ut lectus sed ut. Enim egestas enim id duis.
+              Booking our service is quick and hassle-free—simply choose your preferred time and service type. Our team will handle the rest, ensuring a smooth and professional experience from start to finish.
             </Text>
           </Box>
           <Box mt="30px">
@@ -32,25 +31,25 @@ const Booking = () => {
                 icon: "/sign-up.png",
                 text: "Sign Up",
                 description:
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit lorem sagittis.",
+                  "Sign up today to enjoy easy access to our trusted and professional services.",
               },
               {
                 icon: "/user-circle.png",
                 text: "Create Profile",
                 description:
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit lorem sagittis.",
+                  "Create your profile to personalize your experience.",
               },
               {
                 icon: "/nearby-service.png",
                 text: "Browse Nearby Service",
                 description:
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit lorem sagittis.",
+                  "Find reliable services conveniently located near you for quick and easy access.",
               },
               {
                 icon: "/book.png",
                 text: "Book Service",
                 description:
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit lorem sagittis.",
+                  "Booking our service is quick and hassle-free.",
               },
             ].map((item) => (
               <HStack key={item.text} spacing="12px" align={"start"}>

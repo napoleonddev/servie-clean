@@ -18,8 +18,7 @@ const Team = () => {
           fontSize={"18px"}
           textAlign={{ base: "center", md: "left" }}
         >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit lorem
-          sagittis, proin ut lectus sed ut. Enim egestas enim id duis.
+          Our experienced team delivers professional, efficient, and high-quality services you can rely on.
         </Text>
         <SimpleGrid columns={{ base: 1, md: 4 }} gap="40px" my="60px">
           {[

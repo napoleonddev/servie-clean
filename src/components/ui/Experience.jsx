@@ -187,8 +187,7 @@ const Experience = () => {
               We Are Very Experienced In Cleaning Service
             </Text>
             <Text fontWeight={400} fontSize={"18px"} color="#7B7B7B">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit lorem
-              sagittis, proin ut lectus sed ut. Enim egestas enim id duis.
+              Experienced in providing thorough cleaning services for residential and commercial spaces, including dusting, vacuuming, sanitizing, and waste removal. Skilled in maintaining cleanliness, hygiene, and organization to ensure a safe and welcoming environment.
             </Text>
           </Box>
           <Box mt="30px">
@@ -197,19 +196,19 @@ const Experience = () => {
                 icon: "/check.png",
                 text: "We Are Committed",
                 description:
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit lorem sagittis, proin ut lectus sed ut.",
+                  "We are committed to delivering reliable, high-quality cleaning services that exceed expectations.",
               },
               {
                 icon: "/check.png",
                 text: "Trusted Professionals",
                 description:
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit lorem sagittis, proin ut lectus sed ut.",
+                  "Our team consists of trusted professionals dedicated to maintaining clean and healthy spaces.",
               },
               {
                 icon: "/check.png",
                 text: "Highly Rated Cleaning",
                 description:
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit lorem sagittis, proin ut lectus sed ut.",
+                  "We provide highly rated cleaning services recognized for excellence and customer satisfaction.",
               },
             ].map((item) => (
               <HStack key={item.text} spacing="12px" align={"start"}>

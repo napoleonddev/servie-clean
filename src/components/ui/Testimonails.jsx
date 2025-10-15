@@ -19,8 +19,7 @@ const Testimonails = () => {
           fontSize={"18px"}
           textAlign={{ base: "center", md: "left" }}
         >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit lorem
-          sagittis, proin ut lectus sed ut. Enim egestas enim id duis.
+          See what our clients say about their experiences with our trusted and reliable services.
         </Text>
         <SimpleGrid columns={{ base: 1, md: 3 }} gap="40px" my="60px">
           {
