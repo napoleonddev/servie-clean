@@ -1,11 +1,4 @@
-import {
-  Box,
-  Button,
-  Flex,
-  Image,
-  Text,
-  VStack,
-} from "@chakra-ui/react";
+import { Box, Button, Flex, Image, Text, VStack } from "@chakra-ui/react";
 
 const Hero = () => {
   return (
@@ -67,20 +60,22 @@ const Hero = () => {
           textOverflow={"ellipsis"}
           fontWeight={400}
         >
-          It is a long established fact that a reader will be distracted by the
-          readable <br /> content of a page when looking at its layout.
+          We redefine the standards of cleanliness with an unwavering commitment
+          to excellence,
+          <br />
+          environmental responsibility, and ethical practices.
         </Text>
         <Text
           display={{ base: "block", md: "none" }}
           color="#7B7B7B"
           fontSize={"18px"}
-          whiteSpace={"nowrap"}
-          overflow={"hidden"}
-          textOverflow={"ellipsis"}
           fontWeight={400}
+          px='30px'
+          textAlign={'center'}
         >
-          It is a long established fact that a reader will <br /> be distracted
-          by the readable content of a <br /> page when looking at its layout.
+          We redefine the standards of cleanliness with an unwavering
+          commitment to excellence, environmental responsibility, and
+          ethical practices.
         </Text>
         <Flex gap="12px">
           <Button
@@ -106,7 +101,13 @@ const Hero = () => {
             Explore Service
           </Button>
         </Flex>
-        <Image display={{ base: "none", md: "block" }} src="/vbg.png" pos={"absolute"} bottom={"0"} left={"0"} />
+        <Image
+          display={{ base: "none", md: "block" }}
+          src="/vbg.png"
+          pos={"absolute"}
+          bottom={"0"}
+          left={"0"}
+        />
       </VStack>
       <Box
         display={{ base: "none", md: "block" }}

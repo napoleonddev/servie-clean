@@ -81,24 +81,24 @@ const PriceSection = () => {
     7: { bathrooms: { "3+": { standard: 350, deep: 580, vacate: 580 } } },
   };
 
-  const [selectedOption, setSelectedOption] = useState('size');
-  const [bedrooms, setBedrooms] = useState(['1']);
-  const [bathrooms, setBathrooms] = useState(['1']);
-  const [cleanType, setCleanType] = useState(['standard']);
-  const [frequency, setFrequency] = useState(['one-off']);
-  const [hours, setHours] = useState(['1']);
-  const [minutes, setMinutes] = useState(['0']);
+  const [selectedOption, setSelectedOption] = useState("size");
+  const [bedrooms, setBedrooms] = useState(["1"]);
+  const [bathrooms, setBathrooms] = useState(["1"]);
+  const [cleanType, setCleanType] = useState(["standard"]);
+  const [frequency, setFrequency] = useState(["one-off"]);
+  const [hours, setHours] = useState(["1"]);
+  const [minutes, setMinutes] = useState(["0"]);
   const [currentPrice, setCurrentPrice] = useState(0);
 
   // Calculate price based on current selections
   const calculatePrice = () => {
     let basePrice = 0;
 
-    if (selectedOption === 'size') {
+    if (selectedOption === "size") {
       const bedroom = bedrooms[0];
       const bathroom = bathrooms[0];
       const clean = cleanType[0];
-      
+
       // Get base price from pricing data
       basePrice = pricingData[bedroom]?.bathrooms[bathroom]?.[clean] || 0;
     } else {
@@ -106,21 +106,21 @@ const PriceSection = () => {
       const hourlyRate = 65; // $65 per hour
       const totalHours = parseFloat(hours[0]) + parseFloat(minutes[0]);
       basePrice = Math.round(totalHours * hourlyRate);
-      
+
       // Apply clean type multiplier for hourly booking
-      if (cleanType[0] === 'deep' || cleanType[0] === 'vacate') {
+      if (cleanType[0] === "deep" || cleanType[0] === "vacate") {
         basePrice = Math.round(basePrice * 1.5);
       }
     }
-    
+
     // Apply frequency discount
     let finalPrice = basePrice;
-    if (frequency[0] === 'weekly' || frequency[0] === 'fortnightly') {
+    if (frequency[0] === "weekly" || frequency[0] === "fortnightly") {
       finalPrice = basePrice * 0.9; // 10% off
-    } else if (frequency[0] === 'monthly') {
+    } else if (frequency[0] === "monthly") {
       finalPrice = basePrice * 0.95; // 5% off
     }
-    
+
     return Math.round(finalPrice);
   };
 
@@ -128,7 +128,15 @@ const PriceSection = () => {
   useEffect(() => {
     const newPrice = calculatePrice();
     setCurrentPrice(newPrice);
-  }, [selectedOption, bedrooms, bathrooms, cleanType, frequency, hours, minutes]);
+  }, [
+    selectedOption,
+    bedrooms,
+    bathrooms,
+    cleanType,
+    frequency,
+    hours,
+    minutes,
+  ]);
 
   const handleFramework1Change = (e) => {
     const selectedValue = e.value[0];
@@ -171,21 +179,21 @@ const PriceSection = () => {
         bgColor={"#fff"}
         p="12px"
         borderRadius={"16px"}
-        flexDir={{ base: 'column', md: 'row' }}
+        flexDir={{ base: "column", md: "row" }}
       >
         <Box>
           <Select.Root
             collection={framework1}
             size={"md"}
             onValueChange={handleFramework1Change}
-            defaultValue={['size']}
+            defaultValue={["size"]}
           >
             <Select.HiddenSelect />
             <Select.Control>
               <Select.Trigger>
                 <Select.ValueText
                   placeholder={framework1.items[0].label}
-                  w={{ base: '210px', md: "160px" }}
+                  w={{ base: "210px", md: "160px" }}
                   p="8px"
                   color={"#000"}
                 />
@@ -196,7 +204,7 @@ const PriceSection = () => {
             </Select.Control>
             <Portal>
               <Select.Positioner>
-                <Select.Content>
+                <Select.Content bgColor={"#fff"}>
                   {framework1.items.map((el) => (
                     <Select.Item item={el} key={el.label} p={"10px"}>
                       {el.label}
@@ -208,22 +216,22 @@ const PriceSection = () => {
             </Portal>
           </Select.Root>
         </Box>
-        
+
         {selectedOption === "size" && (
           <>
             <Box>
-              <Select.Root 
-                collection={framework6} 
+              <Select.Root
+                collection={framework6}
                 size={"md"}
                 onValueChange={handleBedroomsChange}
-                defaultValue={['1']}
+                defaultValue={["1"]}
               >
                 <Select.HiddenSelect />
                 <Select.Control>
                   <Select.Trigger>
                     <Select.ValueText
                       placeholder={framework6.items[0].label}
-                      w={{ base: '210px', md: "160px" }}
+                      w={{ base: "210px", md: "160px" }}
                       p="8px"
                       color={"#000"}
                     />
@@ -234,7 +242,7 @@ const PriceSection = () => {
                 </Select.Control>
                 <Portal>
                   <Select.Positioner>
-                    <Select.Content>
+                    <Select.Content bgColor={"#fff"}>
                       {framework6.items.map((el) => (
                         <Select.Item item={el} key={el.label} p={"10px"}>
                           {el.label}
@@ -247,18 +255,18 @@ const PriceSection = () => {
               </Select.Root>
             </Box>
             <Box>
-              <Select.Root 
-                collection={framework7} 
+              <Select.Root
+                collection={framework7}
                 size={"md"}
                 onValueChange={handleBathroomsChange}
-                defaultValue={['1']}
+                defaultValue={["1"]}
               >
                 <Select.HiddenSelect />
                 <Select.Control>
                   <Select.Trigger>
                     <Select.ValueText
                       placeholder={framework7.items[0].label}
-                      w={{ base: '210px', md: "160px" }}
+                      w={{ base: "210px", md: "160px" }}
                       p="8px"
                       color={"#000"}
                     />
@@ -269,7 +277,7 @@ const PriceSection = () => {
                 </Select.Control>
                 <Portal>
                   <Select.Positioner>
-                    <Select.Content>
+                    <Select.Content bgColor={"#fff"}>
                       {framework7.items.map((el) => (
                         <Select.Item item={el} key={el.label} p={"10px"}>
                           {el.label}
@@ -283,22 +291,22 @@ const PriceSection = () => {
             </Box>
           </>
         )}
-        
+
         {selectedOption === "hour" && (
           <>
             <Box>
-              <Select.Root 
-                collection={framework2} 
+              <Select.Root
+                collection={framework2}
                 size={"md"}
                 onValueChange={handleHoursChange}
-                defaultValue={['1']}
+                defaultValue={["1"]}
               >
                 <Select.HiddenSelect />
                 <Select.Control>
                   <Select.Trigger>
                     <Select.ValueText
                       placeholder={framework2.items[0].label}
-                      w={{ base: '210px', md: "160px" }}
+                      w={{ base: "210px", md: "160px" }}
                       p="8px"
                       color={"#000"}
                     />
@@ -309,7 +317,7 @@ const PriceSection = () => {
                 </Select.Control>
                 <Portal>
                   <Select.Positioner>
-                    <Select.Content>
+                    <Select.Content bgColor={"#fff"}>
                       {framework2.items.map((el) => (
                         <Select.Item item={el} key={el.label} p={"10px"}>
                           {el.label}
@@ -322,18 +330,18 @@ const PriceSection = () => {
               </Select.Root>
             </Box>
             <Box>
-              <Select.Root 
-                collection={framework3} 
+              <Select.Root
+                collection={framework3}
                 size={"md"}
                 onValueChange={handleMinutesChange}
-                defaultValue={['0']}
+                defaultValue={["0"]}
               >
                 <Select.HiddenSelect />
                 <Select.Control>
                   <Select.Trigger>
                     <Select.ValueText
                       placeholder={framework3.items[0].label}
-                      w={{ base: '210px', md: "160px" }}
+                      w={{ base: "210px", md: "160px" }}
                       p="8px"
                       color={"#000"}
                     />
@@ -344,7 +352,7 @@ const PriceSection = () => {
                 </Select.Control>
                 <Portal>
                   <Select.Positioner>
-                    <Select.Content>
+                    <Select.Content bgColor={"#fff"}>
                       {framework3.items.map((el) => (
                         <Select.Item item={el} key={el.label} p={"10px"}>
                           {el.label}
@@ -358,20 +366,20 @@ const PriceSection = () => {
             </Box>
           </>
         )}
-        
+
         <Box>
-          <Select.Root 
-            collection={framework4} 
+          <Select.Root
+            collection={framework4}
             size={"md"}
             onValueChange={handleCleanTypeChange}
-            defaultValue={['standard']}
+            defaultValue={["standard"]}
           >
             <Select.HiddenSelect />
             <Select.Control>
               <Select.Trigger>
                 <Select.ValueText
                   placeholder={framework4.items[0].label}
-                  w={{ base: '210px', md: "160px" }}
+                  w={{ base: "210px", md: "160px" }}
                   p="8px"
                   color={"#000"}
                 />
@@ -382,7 +390,7 @@ const PriceSection = () => {
             </Select.Control>
             <Portal>
               <Select.Positioner>
-                <Select.Content>
+                <Select.Content bgColor={"#fff"}>
                   {framework4.items.map((el) => (
                     <Select.Item item={el} key={el.label} p={"10px"}>
                       {el.label}
@@ -394,20 +402,20 @@ const PriceSection = () => {
             </Portal>
           </Select.Root>
         </Box>
-        
+
         <Box>
-          <Select.Root 
-            collection={framework5} 
+          <Select.Root
+            collection={framework5}
             size={"md"}
             onValueChange={handleFrequencyChange}
-            defaultValue={['one-off']}
+            defaultValue={["one-off"]}
           >
             <Select.HiddenSelect />
             <Select.Control>
               <Select.Trigger>
                 <Select.ValueText
                   placeholder={framework5.items[0].label}
-                  w={{ base: '210px', md: "160px" }}
+                  w={{ base: "210px", md: "160px" }}
                   p="8px"
                   color={"#000"}
                 />
@@ -418,7 +426,7 @@ const PriceSection = () => {
             </Select.Control>
             <Portal>
               <Select.Positioner>
-                <Select.Content>
+                <Select.Content bgColor={"#fff"}>
                   {framework5.items.map((el) => (
                     <Select.Item item={el} key={el.label} p={"10px"}>
                       {el.label}
@@ -430,13 +438,13 @@ const PriceSection = () => {
             </Portal>
           </Select.Root>
         </Box>
-        
+
         <HStack>
           <Button
-            bgColor="#36B864" 
-            color="white" 
-            px="30px" 
-            py="10px" 
+            bgColor="#36B864"
+            color="white"
+            px="30px"
+            py="10px"
             borderRadius="8px"
             fontWeight="bold"
             fontSize="16px"
