@@ -4,7 +4,7 @@ const Hero = () => {
   return (
     <Flex
       pl={{ base: "0", md: "60px" }}
-      bgColor={"#36B8641A !important"}
+      bgColor={"#98b2781A !important"}
       justify={"space-around"}
       pos={{ base: "initial", md: "relative" }}
       direction={{ base: "column", md: "row" }}
@@ -18,7 +18,7 @@ const Hero = () => {
           <Image src="/pattren.png" w="20px" mb="-7px" ml="-6px" />
           <Text
             p={"8px 12px"}
-            bgColor={"#36B864"}
+            bgColor={"#98b278"}
             color="#fff"
             borderRadius={"25px"}
             fontWeight={400}
@@ -29,7 +29,7 @@ const Hero = () => {
         <Text
           display={{ base: "none", md: "block" }}
           color="#000"
-          fontSize={"72px"}
+          fontSize={"55px"}
           whiteSpace={"nowrap"}
           overflow={"hidden"}
           textOverflow={"ellipsis"}
@@ -60,10 +60,8 @@ const Hero = () => {
           textOverflow={"ellipsis"}
           fontWeight={400}
         >
-          We redefine the standards of cleanliness with an unwavering commitment
-          to excellence,
-          <br />
-          environmental responsibility, and ethical practices.
+          We redefine the standards of cleanliness with an unwavering <br /> commitment
+          to excellence, environmental responsibility, and <br /> ethical practices.
         </Text>
         <Text
           display={{ base: "block", md: "none" }}

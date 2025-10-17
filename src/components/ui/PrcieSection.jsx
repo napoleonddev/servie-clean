@@ -22,7 +22,6 @@ const PriceSection = () => {
   });
   const framework2 = createListCollection({
     items: [
-      { label: "1 Hour", value: "1" },
       { label: "2 Hours", value: "2" },
       { label: "3 Hours", value: "3" },
       { label: "4 Hours", value: "4" },
@@ -31,23 +30,24 @@ const PriceSection = () => {
   });
   const framework3 = createListCollection({
     items: [
+      { label: "0 Minutes", value: "0" },
       { label: "15 Minutes", value: "15" },
       { label: "30 Minutes", value: "30" },
+      { label: "45 Minutes", value: "45" },
     ],
   });
   const framework4 = createListCollection({
     items: [
       { label: "Standard Clean", value: "standard" },
-      { label: "Vacate Clean", value: "vacate" },
       { label: "Deep Clean", value: "deep" },
+      { label: "Vacate Clean", value: "vacate" },
     ],
   });
   const framework5 = createListCollection({
     items: [
       { label: "Once off", value: "one-off" },
       { label: "Weekly (10% off)", value: "weekly" },
-      { label: "Fornightly (10% off)", value: "fortnightly" },
-      { label: "Monthly (5% off)", value: "monthly" },
+      { label: "Fortnightly (5% off)", value: "fortnightly" },
     ],
   });
   const framework6 = createListCollection({
@@ -56,8 +56,7 @@ const PriceSection = () => {
       { label: "2 Bedrooms", value: "2" },
       { label: "3 Bedrooms", value: "3" },
       { label: "4 Bedrooms", value: "4" },
-      { label: "5 Bedrooms", value: "5+" },
-      { label: "6 Bedrooms", value: "5+" },
+      { label: "5 Bedrooms", value: "5" },
     ],
   });
   const framework7 = createListCollection({
@@ -66,19 +65,55 @@ const PriceSection = () => {
       { label: "2 Bathrooms", value: "2" },
       { label: "3 Bathrooms", value: "3" },
       { label: "4 Bathrooms", value: "4" },
-      { label: "5 Bathrooms", value: "5+" },
-      { label: "6 Bathrooms", value: "5+" },
+      { label: "5 Bathrooms", value: "5" },
     ],
   });
 
-  const pricingData = {
-    1: { bathrooms: { 1: { standard: 170, deep: 370, vacate: 370 } } },
-    2: { bathrooms: { 1: { standard: 210, deep: 410, vacate: 410 } } },
-    3: { bathrooms: { 2: { standard: 230, deep: 440, vacate: 440 } } },
-    4: { bathrooms: { 1: { standard: 250, deep: 470, vacate: 470 } } },
-    5: { bathrooms: { 2: { standard: 270, deep: 490, vacate: 490 } } },
-    6: { bathrooms: { 2: { standard: 300, deep: 520, vacate: 520 } } },
-    7: { bathrooms: { "3+": { standard: 350, deep: 580, vacate: 580 } } },
+  // Fixed pricing data based on the images
+  const sizePricingData = {
+    // Format: bedrooms: { bathrooms: { cleanType: price } }
+    1: { 
+      1: { standard: 170, deep: 370, vacate: 370 } 
+    },
+    2: { 
+      1: { standard: 210, deep: 400, vacate: 400 },
+      2: { standard: 230, deep: 440, vacate: 440 }
+    },
+    3: { 
+      2: { standard: 270, deep: 490, vacate: 490 },
+      3: { standard: 300, deep: 520, vacate: 520 }
+    },
+    4: { 
+      4: { standard: 350, deep: 560, vacate: 560 }
+    },
+    5: { 
+      4: { standard: 380, deep: 620, vacate: 620 },
+      5: { standard: 400, deep: 650, vacate: 650 }
+    },
+  };
+
+  // Hourly pricing data based on the second table
+  const hourlyPricingData = {
+    2: { 
+      "one-off": 115, 
+      "weekly": 104, 
+      "fortnightly": 110 
+    },
+    3: { 
+      "one-off": 170, 
+      "weekly": 153, 
+      "fortnightly": 162 
+    },
+    4: { 
+      "one-off": 240, 
+      "weekly": 216, 
+      "fortnightly": 228 
+    },
+    5: { 
+      "one-off": 295, 
+      "weekly": 265, 
+      "fortnightly": 280 
+    },
   };
 
   const [selectedOption, setSelectedOption] = useState("size");
@@ -86,7 +121,7 @@ const PriceSection = () => {
   const [bathrooms, setBathrooms] = useState(["1"]);
   const [cleanType, setCleanType] = useState(["standard"]);
   const [frequency, setFrequency] = useState(["one-off"]);
-  const [hours, setHours] = useState(["1"]);
+  const [hours, setHours] = useState(["2"]);
   const [minutes, setMinutes] = useState(["0"]);
   const [currentPrice, setCurrentPrice] = useState(0);
 
@@ -95,33 +130,47 @@ const PriceSection = () => {
     let basePrice = 0;
 
     if (selectedOption === "size") {
+      // Size-based pricing
       const bedroom = bedrooms[0];
       const bathroom = bathrooms[0];
       const clean = cleanType[0];
 
-      // Get base price from pricing data
-      basePrice = pricingData[bedroom]?.bathrooms[bathroom]?.[clean] || 0;
-    } else {
-      // Calculate hourly prices
-      const hourlyRate = 65; // $65 per hour
-      const totalHours = parseFloat(hours[0]) + parseFloat(minutes[0]);
-      basePrice = Math.round(totalHours * hourlyRate);
+      // Find the closest available configuration
+      let priceConfig = sizePricingData[bedroom];
+      
+      if (!priceConfig) {
+        // If bedroom not found, use the largest available
+        const availableBedrooms = Object.keys(sizePricingData).map(Number);
+        const maxBedroom = Math.max(...availableBedrooms);
+        priceConfig = sizePricingData[maxBedroom];
+      }
 
-      // Apply clean type multiplier for hourly booking
-      if (cleanType[0] === "deep" || cleanType[0] === "vacate") {
-        basePrice = Math.round(basePrice * 1.5);
+      // Find the closest bathroom configuration
+      let availableBathrooms = Object.keys(priceConfig).map(Number);
+      let selectedBathroom = parseInt(bathroom);
+      
+      // Find the closest bathroom count that exists in pricing data
+      let matchedBathroom = availableBathrooms.reduce((prev, curr) => {
+        return (Math.abs(curr - selectedBathroom) < Math.abs(prev - selectedBathroom) ? curr : prev);
+      });
+
+      basePrice = priceConfig[matchedBathroom]?.[clean] || 0;
+
+    } else {
+      // Hourly pricing
+      const totalHours = parseFloat(hours[0]);
+      
+      // For hourly booking, only Standard Clean is available according to the table
+      // Deep and Vacate cleans are only available in size-based pricing
+      if (cleanType[0] !== "standard") {
+        // If user selects deep or vacate for hourly, show message or use standard
+        basePrice = hourlyPricingData[totalHours]?.[frequency[0]] || 0;
+      } else {
+        basePrice = hourlyPricingData[totalHours]?.[frequency[0]] || 0;
       }
     }
 
-    // Apply frequency discount
-    let finalPrice = basePrice;
-    if (frequency[0] === "weekly" || frequency[0] === "fortnightly") {
-      finalPrice = basePrice * 0.9; // 10% off
-    } else if (frequency[0] === "monthly") {
-      finalPrice = basePrice * 0.95; // 5% off
-    }
-
-    return Math.round(finalPrice);
+    return basePrice;
   };
 
   // Update price when selections change
@@ -141,6 +190,11 @@ const PriceSection = () => {
   const handleFramework1Change = (e) => {
     const selectedValue = e.value[0];
     setSelectedOption(selectedValue);
+    
+    // Reset to appropriate defaults when switching modes
+    if (selectedValue === "hour") {
+      setCleanType(["standard"]); // Hourly only supports standard clean
+    }
   };
 
   const handleBedroomsChange = (e) => {
@@ -299,7 +353,7 @@ const PriceSection = () => {
                 collection={framework2}
                 size={"md"}
                 onValueChange={handleHoursChange}
-                defaultValue={["1"]}
+                defaultValue={["2"]}
               >
                 <Select.HiddenSelect />
                 <Select.Control>
@@ -441,14 +495,13 @@ const PriceSection = () => {
 
         <HStack>
           <Button
-            bgColor="#36B864"
+            bgColor="#98b278"
             color="white"
             px="30px"
             py="10px"
             borderRadius="8px"
             fontWeight="bold"
             fontSize="16px"
-            _hover={{ bgColor: "#2E9C54" }}
           >
             ${currentPrice} BOOK NOW
           </Button>

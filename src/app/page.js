@@ -8,6 +8,7 @@ import Team from "@/components/ui/Team";
 import Testimonails from "@/components/ui/Testimonails";
 import Footer from "@/components/ui/Footer";
 import PriceSection from "@/components/ui/PrcieSection";
+import StatisticsSection from "@/components/ui/StatisticsSection";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <Experience />
       <PriceSection />
       <Booking />
+      <StatisticsSection />
       <Team />
       <Testimonails />
       <Footer />

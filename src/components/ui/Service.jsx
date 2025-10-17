@@ -1,4 +1,4 @@
-import { Flex, Image, SimpleGrid, Stack, Text } from "@chakra-ui/react";
+import { Flex, Image, SimpleGrid, Stack, Text, VStack } from "@chakra-ui/react";
 import { Box } from "@chakra-ui/react";
 import React from "react";
 
@@ -23,6 +23,7 @@ const Service = () => {
       icon: <Image src="/painter.png" />,
       title: "Facility Management",
       description: "Let us take the stress off you in the management of your facilities. We are able to assist your business with everything facility management providing services such as building and common area maintenance and cleaning, public facility maintenance and restroom cleaning.",
+      tag: "Learn More",
       icon2: <Image src="/diag_arrow.png" />,
     },
     {
@@ -36,27 +37,6 @@ const Service = () => {
       icon: <Image src="/electrician.png" />,
       title: "Post Construction Clean",
       description: "Thorough cleaning of all surfaces,Dust removal from ceilings, walls, and fixtures.Cleaning of spill, scuff, and other building splashes,Cleaning windows and glass,Polishing and sanitising surfaces Final inspection for any remaining debris.",
-      tag: "Learn More",
-      icon2: <Image src="/diag_arrow.png" />,
-    },
-    {
-      icon: <Image src="/plumber.png" />,
-      title: "Oven Cleaning",
-      description: "Removing oven racks for separate cleaning,Degreasing and cleaning the oven interior,Cleaning oven glass,Wiping down exterior surfaces,Ensuring a thorough and grease-free oven.",
-      tag: "Learn More",
-      icon2: <Image src="/diag_arrow.png" />,
-    },
-    {
-      icon: <Image src="/carpenter.png" />,
-      title: "Bathroom Cleaning",
-      description: "Servieclean bathroom cleaning is designed to tackle the minutest of details in your intimate home area so you don’t have worry. Our staff will diligently clean all bathroom areas, including ensuring the bathroom tile grout, showers, bathtubs, floors, and mirrors are well detailed giving you the opportunity to relax in.",
-      tag: "Learn More",
-      icon2: <Image src="/diag_arrow.png" />,
-    },
-    {
-      icon: <Image src="/electrician.png" />,
-      title: "Floor Cleaning",
-      description: "Maintenance and cleaning of different types of flooring, such as hardwood, tile, carpet, and laminate. The goal is to remove stains and maintain the integrity of the flooring material.",
       tag: "Learn More",
       icon2: <Image src="/diag_arrow.png" />,
     },
@@ -78,21 +58,22 @@ const Service = () => {
       <SimpleGrid columns={{ base: 1, md: 3 }} gap='40px' my='60px'>
         {
           services.map((service) => (
-            <Box key={service.title} borderRadius="16px" border={'1px solid #DFDFDF'} p={4} mb={4} maxH={'250px'}>
+            <VStack key={service.title} borderRadius="16px" border={'1px solid #DFDFDF'} p={4} mb={4} h={'320px'} align={'space-between'} justify={'start'}>
               <Box display="flex" alignItems="center">
                 <Flex align={'center'} justify={'center'} w='50px' h='50px' className="green" borderRadius="50%">
                   {service.icon}
                 </Flex>
                 <Text fontWeight={600} fontSize={'24px'} ml={4}>{service.title}</Text>
               </Box>
-              <Text fontWeight={400} fontSize={'16px'} mt={2} maxH={'100px'} overflow={'scroll'}>{service.description}</Text>
+              {/* <Text fontWeight={400} fontSize={'16px'} mt={2} maxH={'100px'} overflow={'scroll'}>{service.description}</Text> */}
+              <Text fontWeight={400} fontSize={'14px'} mt={2}>{service.description}</Text>
               <Box display="flex" alignItems="center" mt={4} gap='10px'>
                 <Text fontWeight={600}>{service.tag}</Text>
                 <Box p='15px' borderRadius="50%" border={'1px solid #DFDFDF'}>
                   {service.icon2}
                 </Box>
               </Box>
-            </Box>
+            </VStack>
           ))
         }
       </SimpleGrid>
