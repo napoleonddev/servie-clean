@@ -6,28 +6,38 @@ import {
   Flex,
   HStack,
   VStack,
-  Link,
+  Link as ChakraLink,
   IconButton,
   Image,
   Text,
   Drawer,
   DrawerBody,
-  DrawerOverlay,
-  DrawerContent,
-  DrawerCloseButton,
   Button,
   CloseButton,
 } from "@chakra-ui/react";
 import { LuPhone } from "react-icons/lu";
 import { FaBell } from "react-icons/fa";
-import DarkModeToggle from "./DarkModeToggle";
+// import DarkModeToggle from "./DarkModeToggle";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { Portal } from "@chakra-ui/react";
 import { WiTime9 } from "react-icons/wi";
+import { GoMail } from "react-icons/go";
+import NextLink from "next/link";
+import { usePathname } from "next/navigation";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
   const [close, setClose] = useState(false);
+
+  const pathname = usePathname();
+
+  const navLinks = [
+    { name: "Home", href: "/" },
+    { name: "About us", href: "/about" },
+    { name: "Service", href: "/service" },
+    { name: "Blog", href: "/blog" },
+    { name: "Contact", href: "/contact" },
+  ];
 
   return (
     <Box bg="#fff" px={{ base: 4, md: "60px" }} py={{ base: 4, md: "15px" }}>
@@ -38,41 +48,52 @@ const Header = () => {
             {" "}
             <Image src="/logo.png" alt="Servie Clean Logo" />{" "}
           </Box>{" "}
+          <HStack>
+            <IconButton className="green" color="#fff" p="10px">
+              {" "}
+              <LuPhone /> <Text ml="5px">08 6383 8002</Text>{" "}
+            </IconButton>{" "}
+          </HStack>
           <Flex gap="10px">
-            <HStack>
-              <WiTime9 color="#36B864" size="25px" />
-              <Box>
-                <Text fontSize={"12px"}>Working Hours</Text>
-                <Text fontSize={"12px"} fontWeight={600}>
-                  Mon - Sat: 08.00am - 06.00pm
-                </Text>
-              </Box>
-            </HStack>{" "}
-            <HStack>
-              {" "}
-              <IconButton className="green" color="#fff" p="10px">
-                {" "}
-                <LuPhone /> <Text ml="5px">08 6383 8002</Text>{" "}
-              </IconButton>{" "}
-            </HStack>{" "}
+            <WiTime9 color="#36B864" size="25px" />
+            <Box>
+              <Text fontSize={"12px"}>Working Hours</Text>
+              <Text fontSize={"12px"} fontWeight={600}>
+                Mon - Sat: 08.00am - 06.00pm
+              </Text>
+            </Box>{" "}
           </Flex>
-          <Flex gap="30px" align={"center"}>
+          <HStack>
             {" "}
-            <Link href={"/"}>Home</Link> <Link href={"/"}>About us</Link>{" "}
-            <Link href={"/"}>Service</Link> <Link href={"/"}>Blog</Link>{" "}
-            <Link href={"/"}>Contact</Link>{" "}
-          </Flex>{" "}
-          <Flex>
-            {" "}
-            <HStack>
+            <IconButton className="green" color="#fff" p="10px">
               {" "}
-              <IconButton className="green" color="#fff" p="10px">
-                {" "}
-                <FaBell /> <Text ml="5px">BOOK NOW</Text>{" "}
-              </IconButton>{" "}
-            </HStack>{" "}
-            {/* <DarkModeToggle />{" "} */}
-          </Flex>{" "}
+              <FaBell /> <Text ml="5px">BOOK NOW</Text>{" "}
+            </IconButton>{" "}
+          </HStack>{" "}
+          <Flex gap="10px">
+            <GoMail color="#36B864" size="25px" />
+            <Box>
+              <Text fontSize={"12px"}>E-Mail Us</Text>
+              <Text fontSize={"12px"} fontWeight={600}>
+                info@servieclean.com.au
+              </Text>
+            </Box>{" "}
+          </Flex>
+          {/* <DarkModeToggle />{" "} */}
+        </Flex>
+        <Flex gap="30px" align="center" justify="center">
+          {navLinks.map((link) => (
+            <ChakraLink
+              as={NextLink}
+              key={link.href}
+              href={link.href}
+              color={pathname === link.href ? "black" : "gray.500"}
+              fontWeight={pathname === link.href ? "bold" : "normal"}
+              _hover={{ color: "black" }}
+            >
+              {link.name}
+            </ChakraLink>
+          ))}
         </Flex>
       </Box>
 
@@ -97,11 +118,11 @@ const Header = () => {
               display={{ base: "none", md: "flex" }}
               align="center"
             >
-              <Link href="/">Home</Link>
-              <Link href="/about">About us</Link>
-              <Link href="/service">Service</Link>
-              <Link href="/blog">Blog</Link>
-              <Link href="/contact">Contact</Link>
+              <ChakraLink href="/">Home</ChakraLink>
+              <ChakraLink href="/about">About us</ChakraLink>
+              <ChakraLink href="/service">Service</ChakraLink>
+              <ChakraLink href="/blog">Blog</ChakraLink>
+              <ChakraLink href="/contact">Contact</ChakraLink>
             </HStack>
 
             {/* Right Buttons / Dark Mode (Desktop) */}
@@ -131,41 +152,41 @@ const Header = () => {
                 <DrawerBody bgColor={"#fff"} p={6}>
                   <VStack spacing={6} align="start" mt={10}>
                     {/* Nav Links */}
-                    <Link
+                    <ChakraLink
                       href="/"
                       close={close}
                       onClick={(e) => setClose(e.close)}
                     >
                       Home
-                    </Link>
-                    <Link
+                    </ChakraLink>
+                    <ChakraLink
                       href="/about"
                       close={close}
                       onClick={(e) => setClose(e.close)}
                     >
                       About us
-                    </Link>
-                    <Link
+                    </ChakraLink>
+                    <ChakraLink
                       href="/service"
                       close={close}
                       onClick={(e) => setClose(e.close)}
                     >
                       Service
-                    </Link>
-                    <Link
+                    </ChakraLink>
+                    <ChakraLink
                       href="/blog"
                       close={close}
                       onClick={(e) => setClose(e.close)}
                     >
                       Blog
-                    </Link>
-                    <Link
+                    </ChakraLink>
+                    <ChakraLink
                       href="/contact"
                       close={close}
                       onClick={(e) => setClose(e.close)}
                     >
                       Contact
-                    </Link>
+                    </ChakraLink>
 
                     {/* Buttons */}
                     <IconButton className="green" color="#fff" p="10px">
