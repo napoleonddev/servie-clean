@@ -8,11 +8,11 @@ import { Box } from "@chakra-ui/react";
 
 export default function About() {
 
-    const aboutStats = [
-    { id: 1, label: "Years Completed", value: 15, color: "#98b278" },
-    { id: 2, label: "Satisfied Customers", value: 12000, color: "#98b278" },
-    { id: 3, label: "Professional Teams", value: 120, color: "#98b278" },
-    { id: 4, label: "Cleaning Services", value: 250, color: "#98b278" },
+    const homeStats = [
+    { id: 1, label: "Happy Clients", value: 157, color: "#98b278" },
+    { id: 2, label: "Expert Workers", value: 63, color: "#98b278" },
+    { id: 3, label: "Projects Done", value: 189, color: "#98b278" },
+    { id: 4, label: "Years Of Experience", value: 7, color: "#98b278" },
   ];
 
   return (
@@ -20,7 +20,7 @@ export default function About() {
       <Header />
       <Hero />
       <Guide />
-      <StatisticsSection statsData={aboutStats} bg="#f8f9fa" textColor="#000" />
+      <StatisticsSection statsData={homeStats} bg="#f8f9fa" textColor="#000" />
       <Box px='60px' my='20px'>
         <Text fontWeight={700} fontSize={{ base: "25px", md: "45px" }} textAlign={{ base: 'center', md: 'left' }}  color="#04090D" mb='30px'>How It Works</Text>
         <Box>

@@ -48,20 +48,36 @@ const Header = () => {
             {" "}
             <Image src="/logo.png" alt="Servie Clean Logo" />{" "}
           </Box>{" "}
-          <HStack>
-            <IconButton className="green" color="#fff" p="10px">
-              {" "}
-              <LuPhone /> <Text ml="5px">08 6383 8002</Text>{" "}
-            </IconButton>{" "}
-          </HStack>
           <Flex gap="10px">
-            <WiTime9 color="#36B864" size="25px" />
-            <Box>
-              <Text fontSize={"12px"}>Working Hours</Text>
-              <Text fontSize={"12px"} fontWeight={600}>
-                Mon - Sat: 08.00am - 06.00pm
-              </Text>
-            </Box>{" "}
+            <Flex gap="10px">
+              <WiTime9 color="#36B864" size="25px" />
+              <Box>
+                <Text fontSize={"12px"}>Working Hours</Text>
+                <Text fontSize={"12px"} fontWeight={600}>
+                  Mon - Sat: 08.00am - 06.00pm
+                </Text>
+              </Box>{" "}
+            </Flex>
+            <HStack>
+              <IconButton className="green" color="#fff" p="10px">
+                {" "}
+                <LuPhone /> <Text ml="5px">08 6383 8002</Text>{" "}
+              </IconButton>{" "}
+            </HStack>
+          </Flex>
+          <Flex gap="30px" align="center" justify="center">
+            {navLinks.map((link) => (
+              <ChakraLink
+                as={NextLink}
+                key={link.href}
+                href={link.href}
+                color={pathname === link.href ? "black" : "gray.500"}
+                fontWeight={pathname === link.href ? "bold" : "normal"}
+                _hover={{ color: "black" }}
+              >
+                {link.name}
+              </ChakraLink>
+            ))}
           </Flex>
           <HStack>
             {" "}
@@ -70,30 +86,7 @@ const Header = () => {
               <FaBell /> <Text ml="5px">BOOK NOW</Text>{" "}
             </IconButton>{" "}
           </HStack>{" "}
-          <Flex gap="10px">
-            <GoMail color="#36B864" size="25px" />
-            <Box>
-              <Text fontSize={"12px"}>E-Mail Us</Text>
-              <Text fontSize={"12px"} fontWeight={600}>
-                info@servieclean.com.au
-              </Text>
-            </Box>{" "}
-          </Flex>
           {/* <DarkModeToggle />{" "} */}
-        </Flex>
-        <Flex gap="30px" align="center" justify="center">
-          {navLinks.map((link) => (
-            <ChakraLink
-              as={NextLink}
-              key={link.href}
-              href={link.href}
-              color={pathname === link.href ? "black" : "gray.500"}
-              fontWeight={pathname === link.href ? "bold" : "normal"}
-              _hover={{ color: "black" }}
-            >
-              {link.name}
-            </ChakraLink>
-          ))}
         </Flex>
       </Box>
 
