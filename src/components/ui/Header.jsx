@@ -35,6 +35,7 @@ const Header = () => {
     { name: "Home", href: "/" },
     { name: "About us", href: "/about" },
     { name: "Service", href: "/service" },
+    { name: "Testimonials", href: "/testimonials" },
     { name: "Blog", href: "/blog" },
     { name: "Contact", href: "/contact" },
   ];
@@ -65,13 +66,14 @@ const Header = () => {
               </IconButton>{" "}
             </HStack>
           </Flex>
-          <Flex gap="30px" align="center" justify="center">
+          <Flex gap="20px" align="center" justify="center">
             {navLinks.map((link) => (
               <ChakraLink
                 as={NextLink}
                 key={link.href}
                 href={link.href}
                 color={pathname === link.href ? "black" : "gray.500"}
+                fontSize={'16px'}
                 fontWeight={pathname === link.href ? "bold" : "normal"}
                 _hover={{ color: "black" }}
               >
@@ -114,6 +116,7 @@ const Header = () => {
               <ChakraLink href="/">Home</ChakraLink>
               <ChakraLink href="/about">About us</ChakraLink>
               <ChakraLink href="/service">Service</ChakraLink>
+              <ChakraLink href="/testimonials">Testimonials</ChakraLink>
               <ChakraLink href="/blog">Blog</ChakraLink>
               <ChakraLink href="/contact">Contact</ChakraLink>
             </HStack>
@@ -165,6 +168,13 @@ const Header = () => {
                       onClick={(e) => setClose(e.close)}
                     >
                       Service
+                    </ChakraLink>
+                    <ChakraLink
+                      href="/testimonials"
+                      close={close}
+                      onClick={(e) => setClose(e.close)}
+                    >
+                      Testimonials
                     </ChakraLink>
                     <ChakraLink
                       href="/blog"

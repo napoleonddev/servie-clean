@@ -2,13 +2,13 @@ import { Flex, HStack, SimpleGrid, Text, VStack } from "@chakra-ui/react";
 import { Box, Image } from "@chakra-ui/react";
 import React from "react";
 
-const Featured = () => {
+const Featured = ({toDisp}) => {
   const featuredServices = [
     {
       img: "/serv-img1.png",
       icon: "/star.png",
       numRev: "130",
-      title: "Complete Kitchen Cleaning",
+      title: "Home Cleaning",
       icon2: <Image src="/diag_arrow.png" />,
       userName: "Ronald Mark",
       price: "$150",
@@ -18,7 +18,7 @@ const Featured = () => {
       img: "/serv-img2.png",
       icon: "/star.png",
       numRev: "2.1K",
-      title: "Complete Kitchen Cleaning",
+      title: "Office Cleaning",
       icon2: <Image src="/diag_arrow.png" />,
       userName: "Annette Black",
       price: "$150",
@@ -28,7 +28,7 @@ const Featured = () => {
       img: "/serv-img3.png",
       icon: "/star.png",
       numRev: "210",
-      title: "Complete Kitchen Cleaning",
+      title: "Facility Management",
       icon2: <Image src="/diag_arrow.png" />,
       userName: "Jacob Jones",
       price: "$150",
@@ -38,7 +38,7 @@ const Featured = () => {
       img: "/serv-img4.png",
       icon: "/star.png",
       numRev: "1.2K",
-      title: "Complete Kitchen Cleaning",
+      title: "Pre-construction Cleaning",
       icon2: <Image src="/diag_arrow.png" />,
       userName: "Theresa Webb",
       price: "$150",
@@ -48,7 +48,7 @@ const Featured = () => {
       img: "/serv-img5.png",
       icon: "/star.png",
       numRev: "1.6K",
-      title: "Complete Kitchen Cleaning",
+      title: "Post Construction Clean",
       icon2: <Image src="/diag_arrow.png" />,
       userName: "Marvin Mckinney",
       price: "$150",
@@ -58,7 +58,7 @@ const Featured = () => {
       img: "/serv-img6.png",
       icon: "/star.png",
       numRev: "280",
-      title: "Complete Kitchen Cleaning",
+      title: "Gutter Cleaning",
       icon2: <Image src="/diag_arrow.png" />,
       userName: "Jenny Wilson",
       price: "$150",
@@ -73,6 +73,7 @@ const Featured = () => {
           fontWeight={600}
           fontSize={{ base: "28px", md: "48px" }}
           textAlign={{ base: "center", md: "left" }}
+          display={toDisp === "yes" ? "block" : "none"}
         >
           Our Featured Services
         </Text>
@@ -80,6 +81,7 @@ const Featured = () => {
           fontWeight={400}
           fontSize={"18px"}
           textAlign={{ base: "center", md: "left" }}
+          display={toDisp === "yes" ? "block" : "none"}
         >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit lorem
           sagittis, proin ut lectus sed ut. Enim egestas enim id duis.

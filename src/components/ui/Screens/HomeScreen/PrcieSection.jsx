@@ -73,22 +73,39 @@ const PriceSection = () => {
   const sizePricingData = {
     // Format: bedrooms: { bathrooms: { cleanType: price } }
     1: { 
-      1: { standard: 170, deep: 370, vacate: 370 } 
+      1: { standard: 170, deep: 370, vacate: 370 },
+      2: { standard: 220, deep: 420, vacate: 420 },
+      3: { standard: 270, deep: 470, vacate: 470 },
+      4: { standard: 320, deep: 520, vacate: 520 },
+      5: { standard: 370, deep: 570, vacate: 570 },
     },
     2: { 
-      1: { standard: 210, deep: 400, vacate: 400 },
-      2: { standard: 230, deep: 440, vacate: 440 }
+      1: { standard: 220, deep: 420, vacate: 420 },
+      2: { standard: 270, deep: 470, vacate: 470 },
+      3: { standard: 320, deep: 520, vacate: 520 },
+      4: { standard: 370, deep: 570, vacate: 570 },
+      5: { standard: 420, deep: 620, vacate: 620 },
     },
     3: { 
-      2: { standard: 270, deep: 490, vacate: 490 },
-      3: { standard: 300, deep: 520, vacate: 520 }
+      1: { standard: 270, deep: 470, vacate: 470 },
+      2: { standard: 320, deep: 520, vacate: 520 },
+      3: { standard: 370, deep: 570, vacate: 570 },
+      4: { standard: 420, deep: 620, vacate: 620 },
+      5: { standard: 470, deep: 670, vacate: 670 },
     },
     4: { 
-      4: { standard: 350, deep: 560, vacate: 560 }
+      1: { standard: 320, deep: 520, vacate: 520 },
+      2: { standard: 370, deep: 570, vacate: 570 },
+      3: { standard: 420, deep: 620, vacate: 620 },
+      4: { standard: 470, deep: 670, vacate: 670 },
+      5: { standard: 520, deep: 720, vacate: 720 },
     },
     5: { 
-      4: { standard: 380, deep: 620, vacate: 620 },
-      5: { standard: 400, deep: 650, vacate: 650 }
+      1: { standard: 370, deep: 570, vacate: 570 },
+      2: { standard: 420, deep: 620, vacate: 620 },
+      3: { standard: 570, deep: 670, vacate: 670 },
+      4: { standard: 620, deep: 720, vacate: 720 },
+      5: { standard: 670, deep: 770, vacate: 770 },
     },
   };
 

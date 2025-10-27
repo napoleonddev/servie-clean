@@ -18,7 +18,7 @@ const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={montserrat.className} suppressHydrationWarning>
+    <html lang="en" className={montserrat.className} suppressHydrationWarning={true}>
       <body>
         <Provider>{children}</Provider>
       </body>
