@@ -127,23 +127,6 @@ const Featured = ({toDisp}) => {
                       {service.icon2}
                     </Box>
                   </HStack>
-                  <Box border={"1px solid #DFDFDF"} w='full' h='1px' />
-                  <Flex gap={'40px'} justify={"end"}>
-                    <HStack>
-                      <Box w='40px' h='40px' borderRadius='50%' border={"1px solid #DFDFDF"}></Box>
-                      <Text fontWeight={700} fontSize={"16px"} color="#04090D">
-                        {service.userName}
-                      </Text>
-                    </HStack>
-                    <HStack justify={'flex-end'}>
-                      <Text fontWeight={600} fontSize={"16px"} color="#04090D">
-                        {service.price}
-                      </Text>
-                      <Text fontWeight={400} fontSize={"16px"} color="#a1a1a1" textDecoration={'line-through'}>
-                        {service.prevPrice}
-                      </Text>
-                    </HStack>
-                  </Flex>
                 </VStack>
               </Box>
             </Box>
