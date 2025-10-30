@@ -1,3 +1,5 @@
+"use client";
+
 import Header from "@/components/ui/Header";
 import Hero from "../components/ui/Screens/HomeScreen/Hero";
 import Service from "@/components/ui/Screens/HomeScreen/Service";
@@ -8,8 +10,19 @@ import Testimonails from "@/components/ui/Screens/HomeScreen/Testimonails";
 import Footer from "@/components/ui/Footer";
 import PriceSection from "@/components/ui/Screens/HomeScreen/PrcieSection";
 import StatisticsSection from "@/components/ui/StatisticsSection";
+import { useRef } from "react";
 
 export default function Home() {
+  const bookingRef = useRef(null);
+  const serviceRef  = useRef(null);
+
+  const scrollToBooking = () => {
+    bookingRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const scrollToServiceRef = () => {
+    serviceRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
 
   const homeStats = [
     { id: 1, label: "Happy Clients", value: 157, color: "#98b278" },
@@ -21,11 +34,18 @@ export default function Home() {
   return (
     <>
       <Header />
-      <Hero />
-      <Service />
+      <Hero
+        onGetStarted={scrollToBooking}
+        scrollToService={scrollToServiceRef}
+      />
+      <div ref={serviceRef}>
+        <Service />
+      </div>
       <Experience />
       <PriceSection />
-      <Booking />
+      <div ref={bookingRef}>
+        <Booking />
+      </div>
       <StatisticsSection statsData={homeStats} bg="#f8f9fa" textColor="#000" />
       <Team />
       <Testimonails />

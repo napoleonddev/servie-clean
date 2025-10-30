@@ -1,6 +1,6 @@
 import { Box, Button, Flex, Image, Text, VStack } from "@chakra-ui/react";
 
-const Hero = () => {
+const Hero = ({onGetStarted, scrollToService}) => {
   return (
     <Flex
       pl={{ base: "0", md: "60px" }}
@@ -83,6 +83,7 @@ const Hero = () => {
             color={"#fff"}
             fontSize={"16px"}
             fontWeight={400}
+            onClick={onGetStarted}
           >
             Let's Get Started
           </Button>
@@ -95,6 +96,7 @@ const Hero = () => {
             color={"#000000CC"}
             fontSize={"16px"}
             fontWeight={400}
+            onClick={scrollToService}
           >
             Explore Service
           </Button>
