@@ -149,7 +149,7 @@ const ContactSection = () => {
             <Textarea placeholder="Message" pl="10px" w={{ base: "300px", md: "500px" }} />
           </Box>
 
-          <Button w={{ base: "300px", md: "500px" }}>Send your message</Button>
+          <Button bg={'#000'} w={{ base: "300px", md: "500px" }}>Send your message</Button>
         </VStack>
       </Box>
     </Flex>
