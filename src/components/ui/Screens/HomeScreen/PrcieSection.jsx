@@ -10,6 +10,7 @@ import {
 } from "@chakra-ui/react";
 import { Portal } from "@chakra-ui/react";
 import { Box } from "@chakra-ui/react";
+import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
 const PriceSection = () => {
@@ -69,38 +70,40 @@ const PriceSection = () => {
     ],
   });
 
+  const router = useRouter();
+
   // Fixed pricing data based on the images
   const sizePricingData = {
     // Format: bedrooms: { bathrooms: { cleanType: price } }
-    1: { 
+    1: {
       1: { standard: 170, deep: 370, vacate: 370 },
       2: { standard: 220, deep: 420, vacate: 420 },
       3: { standard: 270, deep: 470, vacate: 470 },
       4: { standard: 320, deep: 520, vacate: 520 },
       5: { standard: 370, deep: 570, vacate: 570 },
     },
-    2: { 
+    2: {
       1: { standard: 220, deep: 420, vacate: 420 },
       2: { standard: 270, deep: 470, vacate: 470 },
       3: { standard: 320, deep: 520, vacate: 520 },
       4: { standard: 370, deep: 570, vacate: 570 },
       5: { standard: 420, deep: 620, vacate: 620 },
     },
-    3: { 
+    3: {
       1: { standard: 270, deep: 470, vacate: 470 },
       2: { standard: 320, deep: 520, vacate: 520 },
       3: { standard: 370, deep: 570, vacate: 570 },
       4: { standard: 420, deep: 620, vacate: 620 },
       5: { standard: 470, deep: 670, vacate: 670 },
     },
-    4: { 
+    4: {
       1: { standard: 320, deep: 520, vacate: 520 },
       2: { standard: 370, deep: 570, vacate: 570 },
       3: { standard: 420, deep: 620, vacate: 620 },
       4: { standard: 470, deep: 670, vacate: 670 },
       5: { standard: 520, deep: 720, vacate: 720 },
     },
-    5: { 
+    5: {
       1: { standard: 370, deep: 570, vacate: 570 },
       2: { standard: 420, deep: 620, vacate: 620 },
       3: { standard: 570, deep: 670, vacate: 670 },
@@ -111,25 +114,25 @@ const PriceSection = () => {
 
   // Hourly pricing data based on the second table
   const hourlyPricingData = {
-    2: { 
-      "one-off": 115, 
-      "weekly": 104, 
-      "fortnightly": 110 
+    2: {
+      "one-off": 115,
+      weekly: 104,
+      fortnightly: 110,
     },
-    3: { 
-      "one-off": 170, 
-      "weekly": 153, 
-      "fortnightly": 162 
+    3: {
+      "one-off": 170,
+      weekly: 153,
+      fortnightly: 162,
     },
-    4: { 
-      "one-off": 240, 
-      "weekly": 216, 
-      "fortnightly": 228 
+    4: {
+      "one-off": 240,
+      weekly: 216,
+      fortnightly: 228,
     },
-    5: { 
-      "one-off": 295, 
-      "weekly": 265, 
-      "fortnightly": 280 
+    5: {
+      "one-off": 295,
+      weekly: 265,
+      fortnightly: 280,
     },
   };
 
@@ -141,6 +144,7 @@ const PriceSection = () => {
   const [hours, setHours] = useState(["2"]);
   const [minutes, setMinutes] = useState(["0"]);
   const [currentPrice, setCurrentPrice] = useState(0);
+
 
   // Calculate price based on current selections
   const calculatePrice = () => {
@@ -154,7 +158,7 @@ const PriceSection = () => {
 
       // Find the closest available configuration
       let priceConfig = sizePricingData[bedroom];
-      
+
       if (!priceConfig) {
         // If bedroom not found, use the largest available
         const availableBedrooms = Object.keys(sizePricingData).map(Number);
@@ -165,18 +169,20 @@ const PriceSection = () => {
       // Find the closest bathroom configuration
       let availableBathrooms = Object.keys(priceConfig).map(Number);
       let selectedBathroom = parseInt(bathroom);
-      
+
       // Find the closest bathroom count that exists in pricing data
       let matchedBathroom = availableBathrooms.reduce((prev, curr) => {
-        return (Math.abs(curr - selectedBathroom) < Math.abs(prev - selectedBathroom) ? curr : prev);
+        return Math.abs(curr - selectedBathroom) <
+          Math.abs(prev - selectedBathroom)
+          ? curr
+          : prev;
       });
 
       basePrice = priceConfig[matchedBathroom]?.[clean] || 0;
-
     } else {
       // Hourly pricing
       const totalHours = parseFloat(hours[0]);
-      
+
       // For hourly booking, only Standard Clean is available according to the table
       // Deep and Vacate cleans are only available in size-based pricing
       if (cleanType[0] !== "standard") {
@@ -207,7 +213,7 @@ const PriceSection = () => {
   const handleFramework1Change = (e) => {
     const selectedValue = e.value[0];
     setSelectedOption(selectedValue);
-    
+
     // Reset to appropriate defaults when switching modes
     if (selectedValue === "hour") {
       setCleanType(["standard"]); // Hourly only supports standard clean
@@ -519,6 +525,28 @@ const PriceSection = () => {
             borderRadius="8px"
             fontWeight="bold"
             fontSize="16px"
+            onClick={() => {
+              // Build query params from current state
+              const qp = {
+                mode: selectedOption, // "size" or "hour"
+                bedrooms: bedrooms[0] || "", // "1".."5"
+                bathrooms: bathrooms[0] || "",
+                cleanType: cleanType[0] || "",
+                frequency: frequency[0] || "",
+                hours: hours[0] || "",
+                minutes: minutes[0] || "",
+                price: currentPrice?.toString() || "0",
+              };
+
+              const queryString = Object.entries(qp)
+                .map(
+                  ([k, v]) =>
+                    `${encodeURIComponent(k)}=${encodeURIComponent(v)}`
+                )
+                .join("&");
+
+              router.push(`/booking?${queryString}`);
+            }}
           >
             ${currentPrice} BOOK NOW
           </Button>

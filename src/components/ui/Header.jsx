@@ -81,13 +81,13 @@ const Header = () => {
               </ChakraLink>
             ))}
           </Flex>
-          <HStack>
+          {/* <HStack>
             {" "}
             <IconButton className="green" color="#fff" p="10px">
               {" "}
               <FaBell /> <Text ml="5px">BOOK NOW</Text>{" "}
             </IconButton>{" "}
-          </HStack>{" "}
+          </HStack>{" "} */}
           {/* <DarkModeToggle />{" "} */}
         </Flex>
       </Box>

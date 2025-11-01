@@ -1,22 +1,28 @@
-
 import {
   Box,
   Button,
   HStack,
   Image,
   Input,
+  Link as ChakraLink,
   Textarea,
   VStack,
 } from "@chakra-ui/react";
 import { Text } from "@chakra-ui/react";
 import { Flex } from "@chakra-ui/react";
 import React from "react";
-import { FaFacebook, FaInstagram } from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 
 const ContactSection = () => {
   return (
-    <Flex justify={"center"} align={"center"} px="60px" py='30px'>
+    <Flex
+      direction={{ base: "column", md: "row" }}
+      justify={"center"}
+      align={"center"}
+      px="60px"
+      py="30px"
+    >
       <Box>
         <Box>
           <Text
@@ -41,13 +47,13 @@ const ContactSection = () => {
             {
               icon: "/location.png",
               text: "Location",
-              description: "2464 Royal Ln. Mesa, New Jersey 45463",
+              description: "149a Canning Hwy, South Perth, WA, 6151",
               social: [],
             },
             {
               icon: "/phone.png",
               text: "Phone Number",
-              description: "",
+              description: "08 6383 8002",
               social: [],
             },
             {
@@ -55,9 +61,21 @@ const ContactSection = () => {
               text: "Follow Us",
               description: "",
               social: [
-                { name: "facebook", icon: <FaFacebook /> },
-                { name: "instagram", icon: <FaInstagram /> },
-                { name: "twitter", icon: <FaXTwitter /> },
+                {
+                  name: "facebook",
+                  icon: <FaFacebook />,
+                  link: "https://www.facebook.com/share/17MJ7XWHRv/?mibextid=wwXIfr",
+                },
+                {
+                  name: "instagram",
+                  icon: <FaInstagram />,
+                  link: "https://www.instagram.com/servieclean/?utm_source=ig_web_button_share_sheet",
+                },
+                {
+                  name: "linkedin",
+                  icon: <FaLinkedin />,
+                  link: "https://www.linkedin.com/company/servieclean",
+                },
               ],
             },
           ].map((item) => (
@@ -85,7 +103,11 @@ const ContactSection = () => {
                   {item.social.length > 0 && (
                     <HStack>
                       {item.social.map((el) => (
-                        <Box key={el.name}>{el.icon}</Box>
+                        <Box key={el.name}>
+                          <ChakraLink href={el.link} target="_blank">
+                            {el.icon}
+                          </ChakraLink>
+                        </Box>
                       ))}
                     </HStack>
                   )}
@@ -95,29 +117,39 @@ const ContactSection = () => {
           ))}
         </Box>
       </Box>
-      <Box flex={1}>
-        <VStack gap={'20px'}>
+      <Box flex={1} mt={{ base: "20px", md: 0 }}>
+        <VStack gap={"20px"}>
           <Box>
             <Text>Name</Text>
-            <Input placeholder="Enter your name" pl='10px' w={'300px'} />
+            <Input placeholder="Enter your name" pl="10px" w={{ base: "300px", md: "500px" }} />
           </Box>
 
           <Box>
             <Text>Email Address</Text>
-            <Input type="email" placeholder="Enter your email" pl='10px' w={'300px'} />
+            <Input
+              type="email"
+              placeholder="Enter your email"
+              pl="10px"
+              w={{ base: "300px", md: "500px" }}
+            />
           </Box>
 
           <Box>
             <Text>Mobile Number</Text>
-            <Input type="tel" placeholder="Enter your mobile number" pl='10px' w={'300px'} />
+            <Input
+              type="tel"
+              placeholder="Enter your mobile number"
+              pl="10px"
+              w={{ base: "300px", md: "500px" }}
+            />
           </Box>
 
           <Box>
             <Text>Message</Text>
-            <Textarea placeholder="Message" pl='10px' w={'300px'} />
+            <Textarea placeholder="Message" pl="10px" w={{ base: "300px", md: "500px" }} />
           </Box>
 
-          <Button w={'300px'}>Send your message</Button>
+          <Button w={{ base: "300px", md: "500px" }}>Send your message</Button>
         </VStack>
       </Box>
     </Flex>

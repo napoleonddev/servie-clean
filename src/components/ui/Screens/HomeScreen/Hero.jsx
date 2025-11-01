@@ -1,6 +1,6 @@
-import { Box, Button, Flex, Image, Text, VStack } from "@chakra-ui/react";
+import { Box, Button, Flex, Image, Link as ChakraLink, Text, VStack } from "@chakra-ui/react";
 
-const Hero = ({onGetStarted, scrollToService}) => {
+const Hero = ({onGetStarted}) => {
   return (
     <Flex
       pl={{ base: "0", md: "60px" }}
@@ -87,19 +87,20 @@ const Hero = ({onGetStarted, scrollToService}) => {
           >
             Let's Get Started
           </Button>
-          <Button
-            className="green"
-            border={"1px solid #000000CC"}
-            borderRadius={"24px"}
-            p="20px 12px"
-            bgColor={"transparent"}
-            color={"#000000CC"}
-            fontSize={"16px"}
-            fontWeight={400}
-            onClick={scrollToService}
-          >
-            Explore Service
-          </Button>
+          <ChakraLink href="/service">
+            <Button
+              className="green"
+              border={"1px solid #000000CC"}
+              borderRadius={"24px"}
+              p="20px 12px"
+              bgColor={"transparent"}
+              color={"#000000CC"}
+              fontSize={"16px"}
+              fontWeight={400}
+            >
+              Explore Service
+            </Button>
+          </ChakraLink>
         </Flex>
         <Image
           display={{ base: "none", md: "block" }}

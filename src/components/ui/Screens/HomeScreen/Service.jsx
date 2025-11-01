@@ -10,7 +10,7 @@ import {
 import { Box } from "@chakra-ui/react";
 import React from "react";
 
-const Service = () => {
+const Service = ({onGetStarted}) => {
   const services = [
     {
       icon: <Image src="/home.png" />,
@@ -119,6 +119,7 @@ const Service = () => {
               borderRadius="8px"
               fontWeight="bold"
               fontSize="16px"
+              onClick={onGetStarted}
             >
               BOOK NOW
             </Button>

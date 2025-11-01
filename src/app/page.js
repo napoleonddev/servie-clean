@@ -14,14 +14,9 @@ import { useRef } from "react";
 
 export default function Home() {
   const bookingRef = useRef(null);
-  const serviceRef  = useRef(null);
 
   const scrollToBooking = () => {
     bookingRef.current?.scrollIntoView({ behavior: "smooth" });
-  };
-
-  const scrollToServiceRef = () => {
-    serviceRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
   const homeStats = [
@@ -34,18 +29,15 @@ export default function Home() {
   return (
     <>
       <Header />
-      <Hero
-        onGetStarted={scrollToBooking}
-        scrollToService={scrollToServiceRef}
-      />
-      <div ref={serviceRef}>
-        <Service />
-      </div>
+      <Hero onGetStarted={scrollToBooking} />
+      {/* <div ref={serviceRef}> */}
+      <Service onGetStarted={scrollToBooking} />
+      {/* </div> */}
       <Experience />
-      <PriceSection />
       <div ref={bookingRef}>
-        <Booking />
+        <PriceSection />
       </div>
+      <Booking />
       <StatisticsSection statsData={homeStats} bg="#f8f9fa" textColor="#000" />
       <Team />
       <Testimonails />
