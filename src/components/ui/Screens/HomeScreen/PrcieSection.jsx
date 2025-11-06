@@ -7,6 +7,7 @@ import {
   HStack,
   Select,
   Text,
+  Link as ChakraLink,
 } from "@chakra-ui/react";
 import { Portal } from "@chakra-ui/react";
 import { Box } from "@chakra-ui/react";
@@ -245,10 +246,15 @@ const PriceSection = () => {
   };
 
   return (
-    <Box mt="80px" bgColor={"#36B8640D"} pb="20px" px="60px">
-      <Text fontSize={"40px"} fontWeight={600}>
-        Book Your Clean Today:
-      </Text>
+    <Box mt={{ base: "120px", md: "80px" }} bgColor={"#36B8640D"} pb="20px" px="60px">
+      <Flex flexDir={{ base: 'column', md: "row" }} justify={'space-between'} align={{ base: 'center', md: "end" }}>
+        <Text fontSize={{ base: '20px', md: "40px" }} fontWeight={600}>
+          Book Your Clean Today:
+        </Text>
+        <ChakraLink href="/cleaning-services">
+          <Text fontSize={"16px"} color={'#98b278'} fontWeight={700}>Which is right for me?</Text>
+        </ChakraLink>
+      </Flex>
       <Flex
         boxShadow={"0px 4px 10px rgba(0, 0, 0, 0.15)"}
         gap={"20px"}
