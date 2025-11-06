@@ -157,22 +157,22 @@ const CleaningService = () => {
         <Box mt="20px">
           <Table.Root size={"lg"}>
             <Table.Header>
-              <Table.Row>
-                <Table.ColumnHeader fontSize={"18px"}>
+              <Table.Row bgColor={"#fff"}>
+                <Table.ColumnHeader color={'#000'} fontSize={{ base: "13px", lg: "18px" }}>
                   Cleaning Tasks (All Rooms)
                 </Table.ColumnHeader>
-                <Table.ColumnHeader fontSize={"18px"} textAlign="center">
+                <Table.ColumnHeader color={'#000'} fontSize={{ base: "13px", lg: "18px" }} textAlign="center">
                   Standard Cleaning
                 </Table.ColumnHeader>
-                <Table.ColumnHeader fontSize={"18px"} textAlign="center">
+                <Table.ColumnHeader color={'#000'} fontSize={{ base: "13px", lg: "18px" }} textAlign="center">
                   Deep/Vacate Cleaning
                 </Table.ColumnHeader>
               </Table.Row>
             </Table.Header>
             <Table.Body>
               {item1.map((item) => (
-                <Table.Row key={item.id}>
-                  <Table.Cell fontSize="18px" py="10px">
+                <Table.Row key={item.id} bgColor={"#fff"}>
+                  <Table.Cell fontSize={{ base: "13px", lg: "18px" }} py="10px">
                     {item.name}
                   </Table.Cell>
                   <Table.Cell>
@@ -201,22 +201,22 @@ const CleaningService = () => {
         <Box mt="60px">
           <Table.Root size={"lg"}>
             <Table.Header>
-              <Table.Row>
-                <Table.ColumnHeader fontSize={"18px"}>
+              <Table.Row bgColor={"#fff"}>
+                <Table.ColumnHeader color={'#000'} fontSize={{ base: "13px", lg: "18px" }}>
                   Surfaces & Fixtures (All Rooms)
                 </Table.ColumnHeader>
-                <Table.ColumnHeader fontSize={"18px"} textAlign="center">
+                <Table.ColumnHeader color={'#000'} fontSize={{ base: "13px", lg: "18px" }} textAlign="center">
                   Standard Cleaning
                 </Table.ColumnHeader>
-                <Table.ColumnHeader fontSize={"18px"} textAlign="center">
+                <Table.ColumnHeader color={'#000'} fontSize={{ base: "13px", lg: "18px" }} textAlign="center">
                   Deep/Vacate Cleaning
                 </Table.ColumnHeader>
               </Table.Row>
             </Table.Header>
             <Table.Body>
               {item2.map((item) => (
-                <Table.Row key={item.id}>
-                  <Table.Cell fontSize="18px" py="10px">
+                <Table.Row key={item.id} bgColor={"#fff"}>
+                  <Table.Cell fontSize={{ base: "13px", lg: "18px" }} py="10px">
                     {item.name}
                   </Table.Cell>
                   <Table.Cell>
@@ -245,22 +245,22 @@ const CleaningService = () => {
         <Box mt="60px">
           <Table.Root size={"lg"}>
             <Table.Header>
-              <Table.Row>
-                <Table.ColumnHeader fontSize={"18px"}>
+              <Table.Row bgColor={"#fff"}>
+                <Table.ColumnHeader color={'#000'} fontSize={{ base: "13px", lg: "18px" }}>
                   Bathroom / Laundry
                 </Table.ColumnHeader>
-                <Table.ColumnHeader fontSize={"18px"} textAlign="center">
+                <Table.ColumnHeader color={'#000'} fontSize={{ base: "13px", lg: "18px" }} textAlign="center">
                   Standard Cleaning
                 </Table.ColumnHeader>
-                <Table.ColumnHeader fontSize={"18px"} textAlign="center">
+                <Table.ColumnHeader color={'#000'} fontSize={{ base: "13px", lg: "18px" }} textAlign="center">
                   Deep/Vacate Cleaning
                 </Table.ColumnHeader>
               </Table.Row>
             </Table.Header>
-            <Table.Body>
+            <Table.Body bgColor={"#fff"}>
               {item3.map((item) => (
-                <Table.Row key={item.id}>
-                  <Table.Cell fontSize="18px" py="10px">
+                <Table.Row key={item.id} bgColor={"#fff"}>
+                  <Table.Cell fontSize={{ base: "13px", lg: "18px" }} py="10px">
                     {item.name}
                   </Table.Cell>
                   <Table.Cell>
