@@ -23,13 +23,30 @@ import { Portal } from "@chakra-ui/react";
 import { WiTime9 } from "react-icons/wi";
 import { GoMail } from "react-icons/go";
 import NextLink from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
   const [close, setClose] = useState(false);
 
+  const router = useRouter();
   const pathname = usePathname();
+
+  const scrollToBooking = () => {
+    const section = document.getElementById("booking-section");
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  // When on homepage, scroll directly; otherwise, navigate to homepage with hash
+  const handleBookingClick = () => {
+    if (pathname === "/") {
+      scrollToBooking();
+    } else {
+      router.push("/#booking");
+    }
+  };
 
   const navLinks = [
     { name: "Home", href: "/" },
@@ -73,7 +90,7 @@ const Header = () => {
                 key={link.href}
                 href={link.href}
                 color={pathname === link.href ? "black" : "gray.500"}
-                fontSize={'16px'}
+                fontSize={"16px"}
                 fontWeight={pathname === link.href ? "bold" : "normal"}
                 _hover={{ color: "black" }}
               >
@@ -81,13 +98,13 @@ const Header = () => {
               </ChakraLink>
             ))}
           </Flex>
-          {/* <HStack>
+          <HStack onClick={handleBookingClick}>
             {" "}
             <IconButton className="green" color="#fff" p="10px">
               {" "}
               <FaBell /> <Text ml="5px">BOOK NOW</Text>{" "}
             </IconButton>{" "}
-          </HStack>{" "} */}
+          </HStack>{" "}
           {/* <DarkModeToggle />{" "} */}
         </Flex>
       </Box>
@@ -128,7 +145,7 @@ const Header = () => {
                 <Text ml="5px">08 6383 8002</Text>
               </IconButton>
 
-              <IconButton className="green" color="#fff" p="10px">
+              <IconButton className="green" color="#fff" p="10px" onClick={handleBookingClick}>
                 <FaBell />
                 <Text ml="5px">BOOK NOW</Text>
               </IconButton>
@@ -197,7 +214,7 @@ const Header = () => {
                       <Text ml="5px">08 6383 8002</Text>
                     </IconButton>
 
-                    <IconButton className="green" color="#fff" p="10px">
+                    <IconButton className="green" color="#fff" p="10px" onClick={handleBookingClick}>
                       <FaBell />
                       <Text ml="5px">BOOK NOW</Text>
                     </IconButton>

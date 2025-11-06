@@ -10,14 +10,26 @@ import Testimonails from "@/components/ui/Screens/HomeScreen/Testimonails";
 import Footer from "@/components/ui/Footer";
 import PriceSection from "@/components/ui/Screens/HomeScreen/PrcieSection";
 import StatisticsSection from "@/components/ui/StatisticsSection";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 
 export default function Home() {
+  
+
   const bookingRef = useRef(null);
 
   const scrollToBooking = () => {
-    bookingRef.current?.scrollIntoView({ behavior: "smooth" });
+    if (bookingRef.current) {
+      bookingRef.current.scrollIntoView({ behavior: "smooth" });
+    }
   };
+
+  useEffect(() => {
+    if (window.location.hash === "#booking" && bookingRef.current) {
+      setTimeout(() => {
+        bookingRef.current.scrollIntoView({ behavior: "smooth" });
+      }, 200);
+    }
+  }, []);
 
   const homeStats = [
     { id: 1, label: "Happy Clients", value: 157, color: "#98b278" },

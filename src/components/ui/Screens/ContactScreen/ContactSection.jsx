@@ -12,7 +12,7 @@ import { Text } from "@chakra-ui/react";
 import { Flex } from "@chakra-ui/react";
 import React from "react";
 import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
+import { IoMdMail } from "react-icons/io";
 
 const ContactSection = () => {
   return (
@@ -75,6 +75,11 @@ const ContactSection = () => {
                   name: "linkedin",
                   icon: <FaLinkedin />,
                   link: "https://www.linkedin.com/company/servieclean",
+                },
+                {
+                  name: "email",
+                  icon: <IoMdMail />,
+                  link: "mailto:Recruitment@servieclean.com.au",
                 },
               ],
             },
