@@ -48,6 +48,12 @@ const Header = () => {
     }
   };
 
+  const phoneNumber = "0863838002";
+
+  const handleCall = () => {
+    window.location.href = `tel:${phoneNumber}`;
+  };
+
   const navLinks = [
     { name: "Home", href: "/" },
     { name: "About us", href: "/about" },
@@ -77,7 +83,7 @@ const Header = () => {
               </Box>{" "}
             </Flex>
             <HStack>
-              <IconButton className="green" color="#fff" p="10px">
+              <IconButton className="green" color="#fff" p="10px" onClick={handleCall}>
                 {" "}
                 <LuPhone /> <Text ml="5px">08 6383 8002</Text>{" "}
               </IconButton>{" "}
@@ -140,7 +146,7 @@ const Header = () => {
 
             {/* Right Buttons / Dark Mode (Desktop) */}
             <HStack display={{ base: "none", md: "flex" }} spacing={4}>
-              <IconButton className="green" color="#fff" p="10px">
+              <IconButton className="green" color="#fff" p="10px" onClick={handleCall}>
                 <LuPhone />
                 <Text ml="5px">08 6383 8002</Text>
               </IconButton>
@@ -209,7 +215,7 @@ const Header = () => {
                     </ChakraLink>
 
                     {/* Buttons */}
-                    <IconButton className="green" color="#fff" p="10px">
+                    <IconButton className="green" color="#fff" p="10px" onClick={handleCall}>
                       <LuPhone />
                       <Text ml="5px">08 6383 8002</Text>
                     </IconButton>

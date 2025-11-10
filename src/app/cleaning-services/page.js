@@ -252,7 +252,7 @@ const CleaningService = () => {
                 <Table.ColumnHeader color={'#000'} fontSize={{ base: "13px", lg: "18px" }} textAlign="center">
                   Standard Cleaning
                 </Table.ColumnHeader>
-                <Table.ColumnHeader color={'#000'} fontSize={{ base: "13px", lg: "18px" }} textAlign="center">
+                <Table.ColumnHeader color={'#000'}            fontSize={{ base: "13px", lg: "18px" }} textAlign="center">
                   Deep/Vacate Cleaning
                 </Table.ColumnHeader>
               </Table.Row>
