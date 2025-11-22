@@ -70,7 +70,9 @@ const Header = () => {
           {" "}
           <Box maxW={"70px"}>
             {" "}
+            <ChakraLink as={NextLink} href="/">
             <Image src="/logo.png" alt="Servie Clean Logo" />{" "}
+            </ChakraLink>
           </Box>{" "}
           <Flex gap="10px">
             <Flex gap="10px">

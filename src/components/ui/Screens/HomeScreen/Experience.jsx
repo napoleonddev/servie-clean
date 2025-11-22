@@ -120,59 +120,6 @@ const Experience = () => {
               </VStack>
             ))}
           </VStack>
-          <VStack
-            bgColor={"#fff"}
-            boxShadow={"0px 4px 10px rgba(0, 0, 0, 0.15)"}
-            p="15px"
-            borderRadius="16px"
-            gap="10px"
-            pos={"absolute"}
-            right={5}
-            bottom={-20}
-            display={{ base: 'flex', md: 'none' }}
-          >
-            {[
-              {
-                icon: "/location",
-                text1: "Explore Nearby Services",
-                text2: "It is a long established fact that a reader.",
-              },
-              {
-                icon: "/favorite",
-                text1: "View Favourite Services",
-                text2: "It is a long established fact that a reader.",
-              },
-              {
-                icon: "/call",
-                text1: "Live Chat and Call",
-                text2: "It is a long established fact that a reader.",
-              },
-            ].map((item) => (
-              <VStack key={item.icon} align={"start"}>
-                <Box
-                  w="40px"
-                  h="40px"
-                  className="green"
-                  borderRadius="16px"
-                  display={"flex"}
-                  alignItems={"center"}
-                  justifyContent={"center"}
-                >
-                  <Image src={`${item.icon}.png`} />
-                </Box>
-                <Text fontWeight={700} fontSize={{ base: "10px", md: "16px" }}>
-                  {item.text1}
-                </Text>
-                <Text
-                  fontWeight={400}
-                  fontSize={{ base: "9px", md: "14px" }}
-                  textAlign={"center"}
-                >
-                  {item.text2}
-                </Text>
-              </VStack>
-            ))}
-          </VStack>
           <Image
             src="/dot.png"
             w="100px"
@@ -186,11 +133,11 @@ const Experience = () => {
             <Text fontWeight={700} fontSize={{ base: "25px", md: "45px" }} textAlign={{ base: 'center', md: 'left' }} color="#04090D">
               We Are Very Experienced In Cleaning Service
             </Text>
-            <Text fontWeight={400} fontSize={"18px"} color="#7B7B7B">
+            <Text fontWeight={400} fontSize={"18px"} color="#7B7B7B" textAlign={{ base: 'center', md: 'left' }}>
               Experienced in providing thorough cleaning services for residential and commercial spaces, including dusting, vacuuming, sanitizing, and waste removal. Skilled in maintaining cleanliness, hygiene, and organization to ensure a safe and welcoming environment.
             </Text>
           </Box>
-          <Box mt="30px">
+          <Flex direction="column" align={'center'} justify={'center'} mt="30px">
             {[
               {
                 icon: "/check.png",
@@ -233,7 +180,7 @@ const Experience = () => {
                 </VStack>
               </HStack>
             ))}
-          </Box>
+          </Flex>
         </Box>
       </Flex>
     </>
