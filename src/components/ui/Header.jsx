@@ -48,7 +48,7 @@ const Header = () => {
     }
   };
 
-  const phoneNumber = "0863838002";
+  const phoneNumber = "+610863838002";
 
   const handleCall = () => {
     window.location.href = `tel:${phoneNumber}`;
