@@ -222,7 +222,7 @@ const Booking = () => {
             ${price || 0}
           </Text>
           <ChakraLink href={`/checkout?amount=${price || 0}`} width="100%">
-            <Button className="green" width="100%">
+            <Button className="green" color={'#fff'} width="100%">
               Pay Now
             </Button>
           </ChakraLink>

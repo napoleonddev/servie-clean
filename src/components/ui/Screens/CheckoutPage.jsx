@@ -68,7 +68,7 @@ const CheckoutPage = ({ amount }) => {
 
         {errorMessage && <div style={{ color: "red", marginTop: "10px" }}>{errorMessage}</div>}
 
-        <Button disabled={!stripe || loading} w="100%" mt={4} type="submit">
+        <Button disabled={!stripe || loading} w="100%" mt={4} type="submit" className="green" color={'#fff'} fontWeight={600}>
           {loading ? "Processing..." : `Pay $${amount}`}
         </Button>
       </Box>

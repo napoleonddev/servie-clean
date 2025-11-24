@@ -46,7 +46,7 @@ export default function Home() {
       <Service onGetStarted={scrollToBooking} />
       {/* </div> */}
       <Experience />
-      <div ref={bookingRef}>
+      <div ref={bookingRef} id="booking-section">
         <PriceSection />
       </div>
       <Booking />

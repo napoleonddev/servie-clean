@@ -44,7 +44,7 @@ const Header = () => {
     if (pathname === "/") {
       scrollToBooking();
     } else {
-      router.push("/#booking");
+      router.push("/#booking-section");
     }
   };
 
