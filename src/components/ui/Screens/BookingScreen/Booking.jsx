@@ -3,7 +3,17 @@
 import React from "react";
 import { useSearchParams } from "next/navigation";
 import { useState, useEffect } from "react";
-import { Box, Text, Flex, VStack, Input, Button, Link as ChakraLink } from "@chakra-ui/react";
+import {
+  Box,
+  Text,
+  Flex,
+  VStack,
+  Input,
+  Button,
+  Link as ChakraLink,
+  SimpleGrid,
+  Checkbox,
+} from "@chakra-ui/react";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import CheckoutPage from "../CheckoutPage";
@@ -27,6 +37,25 @@ const Booking = () => {
   const [hours, setHours] = useState("");
   const [minutes, setMinutes] = useState("");
   const [price, setPrice] = useState(0);
+  const [selectedExtras, setSelectedExtras] = useState([]);
+
+  console.log("selectedExtras", selectedExtras)
+
+  const handleExtraToggle = (item) => {
+    setSelectedExtras((prev) => {
+      const exists = prev.some((x) => x.label === item.label);
+
+      if (exists) {
+        return prev.filter((x) => x.label !== item.label);
+      } else {
+        return [...prev, item];
+      }
+    });
+  };
+
+  // Calculate total price based on base price + selected extras
+  const totalPrice =
+    price + selectedExtras.reduce((sum, extra) => sum + extra.price, 0);
 
   // Step management
   const [step, setStep] = useState(1);
@@ -65,7 +94,12 @@ const Booking = () => {
   const handleNextStep = () => setStep((prev) => Math.min(prev + 1, 2));
   const handlePrevStep = () => setStep((prev) => Math.max(prev - 1, 1));
 
-  console.log("Booking price:", price);
+  const items = [
+    { label: "Oven", price: 85 },
+    { label: "Fridge", price: 85 },
+    { label: "Cabinet", price: 25 },
+    { label: "Window", price: 25 },
+  ];
 
   return (
     <>
@@ -169,17 +203,57 @@ const Booking = () => {
                 <Button p="8px" variant="outline" onClick={handlePrevStep}>
                   Back
                 </Button>
-                <Button
-                  p="8px"
-                  bg="#98b278"
-                  color="white"
-                  _hover={{ bg: "#88a068" }}
-                >
-                  Confirm Booking
-                </Button>
               </Flex>
             </>
           )}
+          {details.name === "" ||
+          details.email === "" ||
+          details.address === "" ||
+          details.phone === "" ? (
+            <Text color={"red"} fontWeight={500} fontSize={"14px"}>
+              Please fill in all your details to proceed.
+            </Text>
+          ) : (
+            <Text color={"green"} fontWeight={500} fontSize={"14px"}>
+              All details added successfully!
+            </Text>
+          )}
+          <Box maxW="900px" mx="auto" px={[4, 6, 0]} mt={[6, 10]}>
+            <SimpleGrid
+              columns={{ base: 1, sm: 2 }} // 1 column on mobile, 2 on larger screens
+              spacing={{ base: 4, md: 6 }}
+            >
+              {items.map((item) => {
+                const isChecked = selectedExtras.some(
+                  (e) => e.label === item.label
+                );
+
+                return (
+                  <Box
+                    key={item.label}
+                    p={{ base: 4, md: 6 }}
+                    bg="blue.50"
+                    borderRadius="lg"
+                    display="flex"
+                    alignItems="center"
+                    gap={3}
+                    minH="70px"
+                  >
+                    <Checkbox.Root
+                      checked={isChecked}
+                      onCheckedChange={() => handleExtraToggle(item)} // Remove the second argument
+                    >
+                      <Checkbox.HiddenInput />
+                      <Checkbox.Control />
+                      <Checkbox.Label>
+                        {item.label} ${item.price}
+                      </Checkbox.Label>
+                    </Checkbox.Root>
+                  </Box>
+                );
+              })}
+            </SimpleGrid>
+          </Box>
         </Box>
 
         {/* Right Section: Cleaning Summary */}
@@ -196,7 +270,6 @@ const Booking = () => {
             <Text>Frequency: {frequency || "Once"}</Text>
             <Text>Hours: {hours || "0"}</Text>
             <Text>Minutes: {minutes || "0"}</Text>
-            <Text>Extras: None</Text>
             <Text>Date: </Text>
             <Text>Time: </Text>
           </VStack>
@@ -214,21 +287,26 @@ const Booking = () => {
           )}
           {/* <Divider my={4} /> */}
           <Box h="1px" bg="gray.200" w="100%" my="2" />
-          <Text
-            fontSize="2xl"
-            fontWeight="bold"
-            textAlign="right"
-          >
-            ${price || 0}
+          <Text fontSize="2xl" fontWeight="bold" textAlign="right">
+            ${totalPrice || 0}
           </Text>
-          <ChakraLink href={`/checkout?amount=${price || 0}`} width="100%">
-            <Button className="green" color={'#fff'} width="100%">
+          <ChakraLink href={`/checkout?amount=${totalPrice || 0}`} width="100%">
+            <Button
+              className="green"
+              color={"#fff"}
+              width="100%"
+              disabled={
+                details.name === "" ||
+                details.email === "" ||
+                details.address === "" ||
+                details.phone === ""
+              }
+            >
               Pay Now
             </Button>
           </ChakraLink>
         </Box>
       </Flex>
-      
     </>
   );
 };
