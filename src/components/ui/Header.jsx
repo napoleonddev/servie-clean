@@ -48,7 +48,11 @@ const Header = () => {
     }
   };
 
-  const phoneNumber = "+610863838002";
+  const handleBookingClick2 = () => {
+    router.push("/booking");
+  };
+
+  const phoneNumber = "+61468454380";
 
   const handleCall = () => {
     window.location.href = `tel:${phoneNumber}`;
@@ -58,8 +62,8 @@ const Header = () => {
     { name: "Home", href: "/" },
     { name: "About us", href: "/about" },
     { name: "Service", href: "/service" },
-    { name: "Testimonials", href: "/testimonials" },
-    { name: "Blog", href: "/blog" },
+    // { name: "Testimonials", href: "/testimonials" },
+    // { name: "Blog", href: "/blog" },
     { name: "Contact", href: "/contact" },
   ];
 
@@ -68,10 +72,10 @@ const Header = () => {
       <Box display={{ base: "none", md: "block" }}>
         <Flex justify={"space-between"} align={"center"} gap="20px">
           {" "}
-          <Box maxW={"70px"}>
+          <Box maxW={"90px"}>
             {" "}
             <ChakraLink as={NextLink} href="/">
-            <Image src="/logo.png" alt="Servie Clean Logo" />{" "}
+              <Image src="/cleancare.jpg" alt="Servie Clean Logo" w="90px" />{" "}
             </ChakraLink>
           </Box>{" "}
           <Flex gap="10px">
@@ -85,9 +89,14 @@ const Header = () => {
               </Box>{" "}
             </Flex>
             <HStack>
-              <IconButton className="green" color="#fff" p="10px" onClick={handleCall}>
+              <IconButton
+                className="green"
+                color="#fff"
+                p="10px"
+                onClick={handleCall}
+              >
                 {" "}
-                <LuPhone /> <Text ml="5px">08 6383 8002</Text>{" "}
+                <LuPhone /> <Text ml="5px">+61468454380</Text>{" "}
               </IconButton>{" "}
             </HStack>
           </Flex>
@@ -106,7 +115,7 @@ const Header = () => {
               </ChakraLink>
             ))}
           </Flex>
-          <HStack onClick={handleBookingClick}>
+          <HStack onClick={handleBookingClick2}>
             {" "}
             <IconButton className="green" color="#fff" p="10px">
               {" "}
@@ -129,7 +138,9 @@ const Header = () => {
           <Flex justify="space-between" align="center">
             {/* Logo */}
             <Box maxW="70px">
-              <Image src="/logo.png" alt="Servie Clean Logo" />
+              <ChakraLink as={NextLink} href="/">
+                <Image src="/cleancare.png" alt="Servie Clean Logo" />
+              </ChakraLink>
             </Box>
 
             {/* Desktop Nav */}
@@ -141,19 +152,29 @@ const Header = () => {
               <ChakraLink href="/">Home</ChakraLink>
               <ChakraLink href="/about">About us</ChakraLink>
               <ChakraLink href="/service">Service</ChakraLink>
-              <ChakraLink href="/testimonials">Testimonials</ChakraLink>
-              <ChakraLink href="/blog">Blog</ChakraLink>
+              {/* <ChakraLink href="/testimonials">Testimonials</ChakraLink>
+              <ChakraLink href="/blog">Blog</ChakraLink> */}
               <ChakraLink href="/contact">Contact</ChakraLink>
             </HStack>
 
             {/* Right Buttons / Dark Mode (Desktop) */}
             <HStack display={{ base: "none", md: "flex" }} spacing={4}>
-              <IconButton className="green" color="#fff" p="10px" onClick={handleCall}>
+              <IconButton
+                className="green"
+                color="#fff"
+                p="10px"
+                onClick={handleCall}
+              >
                 <LuPhone />
-                <Text ml="5px">08 6383 8002</Text>
+                <Text ml="5px">+61468454380</Text>
               </IconButton>
 
-              <IconButton className="green" color="#fff" p="10px" onClick={handleBookingClick}>
+              <IconButton
+                className="green"
+                color="#fff"
+                p="10px"
+                onClick={handleBookingClick2}
+              >
                 <FaBell />
                 <Text ml="5px">BOOK NOW</Text>
               </IconButton>
@@ -194,7 +215,7 @@ const Header = () => {
                     >
                       Service
                     </ChakraLink>
-                    <ChakraLink
+                    {/* <ChakraLink
                       href="/testimonials"
                       close={close}
                       onClick={(e) => setClose(e.close)}
@@ -207,7 +228,7 @@ const Header = () => {
                       onClick={(e) => setClose(e.close)}
                     >
                       Blog
-                    </ChakraLink>
+                    </ChakraLink> */}
                     <ChakraLink
                       href="/contact"
                       close={close}
@@ -217,12 +238,22 @@ const Header = () => {
                     </ChakraLink>
 
                     {/* Buttons */}
-                    <IconButton className="green" color="#fff" p="10px" onClick={handleCall}>
+                    <IconButton
+                      className="green"
+                      color="#fff"
+                      p="10px"
+                      onClick={handleCall}
+                    >
                       <LuPhone />
-                      <Text ml="5px">08 6383 8002</Text>
+                      <Text ml="5px">+61468454380</Text>
                     </IconButton>
 
-                    <IconButton className="green" color="#fff" p="10px" onClick={handleBookingClick}>
+                    <IconButton
+                      className="green"
+                      color="#fff"
+                      p="10px"
+                      onClick={handleBookingClick2}
+                    >
                       <FaBell />
                       <Text ml="5px">BOOK NOW</Text>
                     </IconButton>

@@ -8,6 +8,7 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import { Box } from "@chakra-ui/react";
+import { useRouter } from "next/navigation";
 import React from "react";
 
 const Service = ({onGetStarted}) => {
@@ -61,6 +62,8 @@ const Service = ({onGetStarted}) => {
       icon2: <Image src="/diag_arrow.png" />,
     },
   ];
+
+  
 
   return (
     <Box p={{ base: "20px", md: "60px" }}>

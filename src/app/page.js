@@ -11,16 +11,22 @@ import Footer from "@/components/ui/Footer";
 import PriceSection from "@/components/ui/Screens/HomeScreen/PrcieSection";
 import StatisticsSection from "@/components/ui/StatisticsSection";
 import { useEffect, useRef } from "react";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
   
 
   const bookingRef = useRef(null);
+  const router = useRouter();
 
   const scrollToBooking = () => {
     if (bookingRef.current) {
       bookingRef.current.scrollIntoView({ behavior: "smooth" });
     }
+  };
+
+  const goToBooking = () => {
+    router.push('/booking');
   };
 
   useEffect(() => {
@@ -41,17 +47,17 @@ export default function Home() {
   return (
     <>
       <Header />
-      <Hero onGetStarted={scrollToBooking} />
+      <Hero onGetStarted={goToBooking} />
       {/* <div ref={serviceRef}> */}
-      <Service onGetStarted={scrollToBooking} />
+      <Service onGetStarted={goToBooking} />
       {/* </div> */}
       <Experience />
-      <div ref={bookingRef} id="booking-section">
+      {/* <div ref={bookingRef} id="booking-section">
         <PriceSection />
-      </div>
-      <Booking />
+      </div> */}
+      {/* <Booking /> */}
       <StatisticsSection statsData={homeStats} bg="#f8f9fa" textColor="#000" />
-      <Team />
+      {/* <Team /> */}
       <Testimonails />
       <Footer />
     </>

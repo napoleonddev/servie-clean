@@ -53,7 +53,7 @@ const ContactSection = () => {
             {
               icon: "/phone.png",
               text: "Phone Number",
-              description: "08 6383 8002",
+              description: "+61468454380",
               social: [],
             },
             {
@@ -79,7 +79,7 @@ const ContactSection = () => {
                 {
                   name: "email",
                   icon: <IoMdMail />,
-                  link: "mailto:Recruitment@servieclean.com.au",
+                  link: "mailto:info@cleaniecare.com.au",
                 },
               ],
             },
@@ -123,39 +123,60 @@ const ContactSection = () => {
         </Box>
       </Box>
       <Box flex={1} mt={{ base: "20px", md: 0 }}>
-        <VStack gap={"20px"}>
-          <Box>
-            <Text>Name</Text>
-            <Input placeholder="Enter your name" pl="10px" w={{ base: "300px", md: "500px" }} />
-          </Box>
+        <form action="https://formspree.io/f/manrdkkp" method="POST">
+          <VStack gap={"20px"}>
+            <Box>
+              <Text>Name</Text>
+              <Input
+                placeholder="Enter your name"
+                pl="10px"
+                w={{ base: "300px", md: "500px" }}
+                name="name"
+              />
+            </Box>
 
-          <Box>
-            <Text>Email Address</Text>
-            <Input
-              type="email"
-              placeholder="Enter your email"
-              pl="10px"
+            <Box>
+              <Text>Email Address</Text>
+              <Input
+                type="email"
+                placeholder="Enter your email"
+                pl="10px"
+                w={{ base: "300px", md: "500px" }}
+                name="email"
+              />
+            </Box>
+
+            <Box>
+              <Text>Mobile Number</Text>
+              <Input
+                type="tel"
+                placeholder="Enter your mobile number"
+                pl="10px"
+                w={{ base: "300px", md: "500px" }}
+                name="mobile"
+              />
+            </Box>
+
+            <Box>
+              <Text>Message</Text>
+              <Textarea
+                placeholder="Message"
+                pl="10px"
+                w={{ base: "300px", md: "500px" }}
+                name="message"
+              />
+            </Box>
+
+            <Button
+              bg={"#000"}
+              color={"#fff"}
               w={{ base: "300px", md: "500px" }}
-            />
-          </Box>
-
-          <Box>
-            <Text>Mobile Number</Text>
-            <Input
-              type="tel"
-              placeholder="Enter your mobile number"
-              pl="10px"
-              w={{ base: "300px", md: "500px" }}
-            />
-          </Box>
-
-          <Box>
-            <Text>Message</Text>
-            <Textarea placeholder="Message" pl="10px" w={{ base: "300px", md: "500px" }} />
-          </Box>
-
-          <Button bg={'#000'}color={'#fff'} w={{ base: "300px", md: "500px" }}>Send your message</Button>
-        </VStack>
+              type="submit"
+            >
+              Send your message
+            </Button>
+          </VStack>
+        </form>
       </Box>
     </Flex>
   );
