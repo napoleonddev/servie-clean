@@ -35,10 +35,10 @@ export default function LoginPage() {
         rounded="2xl"
         shadow="lg"
         width="full"
-        maxW={{ base: "100%" , md: "500px" }}
+        maxW={{ base: "100%", md: "500px" }}
         mx={{ base: 4, md: 0 }}
       >
-        <Heading mb={6} textAlign="center" color="#98b278">
+        <Heading mb={6} textAlign="center" color="#000080">
           Login
         </Heading>
         <VStack spacing={4}>
@@ -49,7 +49,7 @@ export default function LoginPage() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Enter your email"
-              pl='20px'
+              pl="20px"
             />
           </Box>
 
@@ -60,21 +60,17 @@ export default function LoginPage() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="Enter your password"
-              pl='20px'
+              pl="20px"
             />
           </Box>
 
-          <Button
-            width="full"
-            mt={4}
-            onClick={handleLogin}
-          >
+          <Button width="full" mt={4} onClick={handleLogin}>
             Login
           </Button>
 
           <Text fontSize="sm" color="gray.500">
             Don't have an account?{" "}
-            <Link as={NextLink} href="/signup" color="#98b278">
+            <Link as={NextLink} href="/signup" color="#000080">
               Register
             </Link>
           </Text>

@@ -14,8 +14,6 @@ import { useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 
 export default function Home() {
-  
-
   const bookingRef = useRef(null);
   const router = useRouter();
 
@@ -26,7 +24,7 @@ export default function Home() {
   };
 
   const goToBooking = () => {
-    router.push('/booking');
+    router.push("/booking");
   };
 
   useEffect(() => {
@@ -38,10 +36,10 @@ export default function Home() {
   }, []);
 
   const homeStats = [
-    { id: 1, label: "Happy Clients", value: 157, color: "#98b278" },
-    { id: 2, label: "Expert Workers", value: 63, color: "#98b278" },
-    { id: 3, label: "Projects Done", value: 189, color: "#98b278" },
-    { id: 4, label: "Years Of Experience", value: 7, color: "#98b278" },
+    { id: 1, label: "Happy Clients", value: 157, color: "#000080" },
+    { id: 2, label: "Expert Workers", value: 63, color: "#000080" },
+    { id: 3, label: "Projects Done", value: 189, color: "#000080" },
+    { id: 4, label: "Years Of Experience", value: 7, color: "#000080" },
   ];
 
   return (

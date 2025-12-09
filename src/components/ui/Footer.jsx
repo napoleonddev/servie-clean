@@ -12,7 +12,7 @@ import React from "react";
 const Footer = () => {
   return (
     <>
-      <Box p="60px" bgColor={"#36B8640D"}>
+      <Box p="60px" bgColor={"#0000800D"}>
         <SimpleGrid
           columns={{ base: 1, md: 3 }}
           gap="40px"

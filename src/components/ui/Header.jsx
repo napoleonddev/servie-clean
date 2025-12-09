@@ -80,7 +80,7 @@ const Header = () => {
           </Box>{" "}
           <Flex gap="10px">
             <Flex gap="10px">
-              <WiTime9 color="#36B864" size="25px" />
+              <WiTime9 color="#000080" size="25px" />
               <Box>
                 <Text fontSize={"12px"}>Working Hours</Text>
                 <Text fontSize={"12px"} fontWeight={600}>

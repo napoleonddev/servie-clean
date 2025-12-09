@@ -1,10 +1,18 @@
-import { Box, Button, Flex, Image, Link as ChakraLink, Text, VStack } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Flex,
+  Image,
+  Link as ChakraLink,
+  Text,
+  VStack,
+} from "@chakra-ui/react";
 
-const Hero = ({onGetStarted}) => {
+const Hero = ({ onGetStarted }) => {
   return (
     <Flex
       pl={{ base: "0", md: "60px" }}
-      bgColor={"#98b2781A !important"}
+      bgColor={"#0000801A !important"}
       justify={"space-around"}
       pos={{ base: "initial", md: "relative" }}
       direction={{ base: "column", md: "row" }}
@@ -15,10 +23,10 @@ const Hero = ({onGetStarted}) => {
         justify={"center"}
       >
         <Box>
-          <Image src="/pattren.png" w="20px" mb="-7px" ml="-6px" />
+          {/* <Image src="/pattren.png" w="20px" mb="-7px" ml="-6px" /> */}
           <Text
             p={"8px 12px"}
-            bgColor={"#98b278"}
+            bgColor={"#000080"}
             color="#fff"
             borderRadius={"25px"}
             fontWeight={400}
@@ -60,20 +68,20 @@ const Hero = ({onGetStarted}) => {
           textOverflow={"ellipsis"}
           fontWeight={400}
         >
-          We redefine the standards of cleanliness with an unwavering <br /> commitment
-          to excellence, environmental responsibility, and <br /> ethical practices.
+          We redefine the standards of cleanliness with an unwavering <br />{" "}
+          commitment to excellence, environmental responsibility, and <br />{" "}
+          ethical practices.
         </Text>
         <Text
           display={{ base: "block", md: "none" }}
           color="#7B7B7B"
           fontSize={"18px"}
           fontWeight={400}
-          px='30px'
-          textAlign={'center'}
+          px="30px"
+          textAlign={"center"}
         >
-          We redefine the standards of cleanliness with an unwavering
-          commitment to excellence, environmental responsibility, and
-          ethical practices.
+          We redefine the standards of cleanliness with an unwavering commitment
+          to excellence, environmental responsibility, and ethical practices.
         </Text>
         <Flex gap="12px">
           <Button
@@ -102,13 +110,13 @@ const Hero = ({onGetStarted}) => {
             </Button>
           </ChakraLink>
         </Flex>
-        <Image
+        {/* <Image
           display={{ base: "none", md: "block" }}
           src="/vbg.png"
           pos={"absolute"}
           bottom={"0"}
           left={"0"}
-        />
+        /> */}
       </VStack>
       <Box
         display={{ base: "none", md: "block" }}
@@ -116,7 +124,7 @@ const Hero = ({onGetStarted}) => {
         top={400}
         right={580}
       >
-        <Image src="cbg.png" w="100px" />
+        {/* <Image src="cbg.png" w="100px" /> */}
       </Box>
       <Box
         display={{ base: "none", md: "block" }}
@@ -124,7 +132,7 @@ const Hero = ({onGetStarted}) => {
         top={30}
         right={50}
       >
-        <Image src="vbg3.png" w="100px" />
+        {/* <Image src="vbg3.png" w="100px" /> */}
       </Box>
       <Box>
         <VStack
@@ -138,7 +146,7 @@ const Hero = ({onGetStarted}) => {
           right={350}
           zIndex={99}
         >
-          <Image src="/vbg2.png" w="40px" mt="-40px" />
+          {/* <Image src="/vbg2.png" w="40px" mt="-40px" /> */}
           <Text textAlign={"center"} fontWeight={400} fontSize={"14px"}>
             Best cleaning service for your business and house
           </Text>

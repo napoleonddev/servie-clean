@@ -146,7 +146,6 @@ const PriceSection = () => {
   const [minutes, setMinutes] = useState(["0"]);
   const [currentPrice, setCurrentPrice] = useState(0);
 
-
   // Calculate price based on current selections
   const calculatePrice = () => {
     let basePrice = 0;
@@ -246,13 +245,24 @@ const PriceSection = () => {
   };
 
   return (
-    <Box mt={{ base: "120px", md: "80px" }} bgColor={"#36B8640D"} pb="20px" px="60px">
-      <Flex flexDir={{ base: 'column', md: "row" }} justify={'space-between'} align={{ base: 'center', md: "end" }}>
-        <Text fontSize={{ base: '20px', md: "40px" }} fontWeight={600}>
+    <Box
+      mt={{ base: "120px", md: "80px" }}
+      bgColor={"#0000800D"}
+      pb="20px"
+      px="60px"
+    >
+      <Flex
+        flexDir={{ base: "column", md: "row" }}
+        justify={"space-between"}
+        align={{ base: "center", md: "end" }}
+      >
+        <Text fontSize={{ base: "20px", md: "40px" }} fontWeight={600}>
           Book Your Clean Today:
         </Text>
         <ChakraLink href="/cleaning-services">
-          <Text fontSize={"16px"} color={'#98b278'} fontWeight={700}>Which is right for me?</Text>
+          <Text fontSize={"16px"} color={"#000080"} fontWeight={700}>
+            Which is right for me?
+          </Text>
         </ChakraLink>
       </Flex>
       <Flex
@@ -524,7 +534,7 @@ const PriceSection = () => {
 
         <HStack>
           <Button
-            bgColor="#98b278"
+            bgColor="#000080"
             color="white"
             px="30px"
             py="10px"

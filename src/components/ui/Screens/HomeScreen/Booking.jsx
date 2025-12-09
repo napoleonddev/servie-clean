@@ -6,23 +6,31 @@ const Booking = () => {
   return (
     <>
       <Flex
-        align={'center'}
+        align={"center"}
         direction={{ base: "column", md: "row" }}
         gap={"15px"}
-        justify={'center'}
+        justify={"center"}
         px="60px"
-        py='80px'
+        py="80px"
         pos={"relative"}
-        mb='60px'
-        bgColor={'#36B8640D'}
+        mb="60px"
+        bgColor={"#0000800D"}
       >
         <Box flex={1}>
           <Box>
-            <Text fontWeight={700} fontSize={{ base: "25px", md: "45px" }} textAlign={{ base: 'center', md: 'left' }}  color="#04090D">
+            <Text
+              fontWeight={700}
+              fontSize={{ base: "25px", md: "45px" }}
+              textAlign={{ base: "center", md: "left" }}
+              color="#04090D"
+            >
               Step By Step Guide To Book Your Service
             </Text>
             <Text fontWeight={400} fontSize={"18px"} color="#7B7B7B">
-              Booking our service is quick and hassle-free—simply choose your preferred time and service type. Our team will handle the rest, ensuring a smooth and professional experience from start to finish.
+              Booking our service is quick and hassle-free—simply choose your
+              preferred time and service type. Our team will handle the rest,
+              ensuring a smooth and professional experience from start to
+              finish.
             </Text>
           </Box>
           <Box mt="30px">
@@ -48,8 +56,7 @@ const Booking = () => {
               {
                 icon: "/book.png",
                 text: "Book Service",
-                description:
-                  "Booking our service is quick and hassle-free.",
+                description: "Booking our service is quick and hassle-free.",
               },
             ].map((item) => (
               <HStack key={item.text} spacing="12px" align={"start"}>
@@ -65,7 +72,7 @@ const Booking = () => {
                   <Image src={item.icon} alt={item.text} />
                 </Box>
                 <VStack align="start">
-                  <Box mt='12px'>
+                  <Box mt="12px">
                     <Text fontWeight={600} fontSize={"16px"}>
                       {item.text}
                     </Text>

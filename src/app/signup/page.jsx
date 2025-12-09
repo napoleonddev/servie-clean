@@ -41,7 +41,7 @@ export default function RegisterPage() {
         maxW={{ base: "100%", md: "400px" }}
         mx={{ base: 4, md: 0 }}
       >
-        <Heading mb={6} textAlign="center" color="#98b278">
+        <Heading mb={6} textAlign="center" color="#000080">
           Register
         </Heading>
         <VStack spacing={4}>
@@ -52,7 +52,7 @@ export default function RegisterPage() {
               value={name}
               onChange={(e) => setName(e.target.value)}
               placeholder="Enter your full name"
-              pl='20px'
+              pl="20px"
             />
           </Box>
 
@@ -63,7 +63,7 @@ export default function RegisterPage() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Enter your email"
-              pl='20px'
+              pl="20px"
             />
           </Box>
 
@@ -74,21 +74,17 @@ export default function RegisterPage() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="Enter your password"
-              pl='20px'
+              pl="20px"
             />
           </Box>
 
-          <Button
-            width="full"
-            mt={4}
-            onClick={handleRegister}
-          >
+          <Button width="full" mt={4} onClick={handleRegister}>
             Register
           </Button>
 
           <Text fontSize="sm" color="gray.500">
             Already have an account?{" "}
-            <Link as={NextLink} href="/login" color="#98b278">
+            <Link as={NextLink} href="/login" color="#000080">
               Login
             </Link>
           </Text>

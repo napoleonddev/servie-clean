@@ -22,10 +22,10 @@ const PaymentSuccessClient = () => {
           boxShadow="lg"
         >
           <Flex justify={"center"} align={"center"}>
-            <FaCheckCircle size="80px" color="#98b278" />
+            <FaCheckCircle size="80px" color="#000080" />
           </Flex>
 
-          <Heading size="xl" color="#98b278" mb={4}>
+          <Heading size="xl" color="#000080" mb={4}>
             Payment Successful!
           </Heading>
 
@@ -37,7 +37,7 @@ const PaymentSuccessClient = () => {
           )}
 
           <Button
-            bg="#98b278"
+            bg="#000080"
             color="white"
             size="lg"
             width="100%"

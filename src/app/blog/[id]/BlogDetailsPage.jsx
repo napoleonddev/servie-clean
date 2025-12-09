@@ -36,12 +36,17 @@ const BlogDetailsPage = ({ post }) => {
 
   return (
     <>
-      <Box bgColor={"#98b2781A"} px="60px" py="40px">
+      <Box bgColor={"#0000801A"} px="60px" py="40px">
         <Text fontWeight={600} fontSize={{ base: "20px", md: "40px" }}>
           {post.title}
         </Text>
         <HStack mt={{ base: "14px", md: "0" }}>
-          <ChakraLink href="/" color="#000" fontSize={{ base: "14px", md: "16px" }} fontWeight={500}>
+          <ChakraLink
+            href="/"
+            color="#000"
+            fontSize={{ base: "14px", md: "16px" }}
+            fontWeight={500}
+          >
             Home
           </ChakraLink>
           <FaChevronRight />
@@ -49,7 +54,11 @@ const BlogDetailsPage = ({ post }) => {
             Blog
           </ChakraLink>
           <FaChevronRight />
-          <Text fontWeight={400} color="#000" display={{ base: "none", md: "block" }}>
+          <Text
+            fontWeight={400}
+            color="#000"
+            display={{ base: "none", md: "block" }}
+          >
             {post.title}
           </Text>
         </HStack>
@@ -63,7 +72,7 @@ const BlogDetailsPage = ({ post }) => {
           borderRadius="16px"
           mb={6}
         />
-        <Heading size="xl" mb={4} color="#98b278">
+        <Heading size="xl" mb={4} color="#000080">
           {post.title}
         </Heading>
         <Text color="gray.600" mb={4}>
@@ -91,7 +100,7 @@ const BlogDetailsPage = ({ post }) => {
             bg="#def3c5"
             borderRadius="lg"
             borderLeft="4px"
-            borderColor="#98b278"
+            borderColor="#000080"
           >
             <Heading size="md" mb={4}>
               Pro Tips
@@ -99,7 +108,7 @@ const BlogDetailsPage = ({ post }) => {
             <VStack align="stretch" spacing={2}>
               {post.content.tips.map((tip, index) => (
                 <HStack key={index} align="flex-start">
-                  <Text color="#98b278" fontWeight="bold" mt={1}>
+                  <Text color="#000080" fontWeight="bold" mt={1}>
                     •
                   </Text>
                   <Text color="gray.700">{tip}</Text>
@@ -119,20 +128,18 @@ const BlogDetailsPage = ({ post }) => {
 
           <VStack spacing={6} align="stretch">
             {comments.map((comment, index) => (
-              <Box
-                key={index}
-              >
+              <Box key={index}>
                 <HStack spacing={4} align="start">
                   <Avatar.Root size="sm">
                     <Avatar.Fallback name={comment.name} />
                   </Avatar.Root>
                   <Box flex={1}>
-                      <Text fontWeight="bold" fontSize="lg">
-                        {comment.name}
-                      </Text>
-                      <Text color="gray.500" fontSize="sm">
-                        {comment.date}
-                      </Text>
+                    <Text fontWeight="bold" fontSize="lg">
+                      {comment.name}
+                    </Text>
+                    <Text color="gray.500" fontSize="sm">
+                      {comment.date}
+                    </Text>
                     <Text color="gray.600" lineHeight="tall">
                       {comment.comment}
                     </Text>

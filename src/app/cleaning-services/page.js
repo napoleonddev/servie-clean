@@ -10,32 +10,32 @@ const CleaningService = () => {
     {
       id: 1,
       name: "Vacuuming",
-      category: <FaCheck color="#98b278" size={"30px"} />,
-      price: <FaCheck color="#98b278" size={"30px"} />,
+      category: <FaCheck color="#000080" size={"30px"} />,
+      price: <FaCheck color="#000080" size={"30px"} />,
     },
     {
       id: 2,
       name: "Mopping",
-      category: <FaCheck color="#98b278" size={"30px"} />,
-      price: <FaCheck color="#98b278" size={"30px"} />,
+      category: <FaCheck color="#000080" size={"30px"} />,
+      price: <FaCheck color="#000080" size={"30px"} />,
     },
     {
       id: 3,
       name: "Emptying bins",
-      category: <FaCheck color="#98b278" size={"30px"} />,
-      price: <FaCheck color="#98b278" size={"30px"} />,
+      category: <FaCheck color="#000080" size={"30px"} />,
+      price: <FaCheck color="#000080" size={"30px"} />,
     },
     {
       id: 4,
       name: "Wiping surfaces",
-      category: <FaCheck color="#98b278" size={"30px"} />,
-      price: <FaCheck color="#98b278" size={"30px"} />,
+      category: <FaCheck color="#000080" size={"30px"} />,
+      price: <FaCheck color="#000080" size={"30px"} />,
     },
     {
       id: 5,
       name: "Dusting",
-      category: <FaCheck color="#98b278" size={"30px"} />,
-      price: <FaCheck color="#98b278" size={"30px"} />,
+      category: <FaCheck color="#000080" size={"30px"} />,
+      price: <FaCheck color="#000080" size={"30px"} />,
     },
   ];
 
@@ -43,56 +43,56 @@ const CleaningService = () => {
     {
       id: 1,
       name: "Skirting Boards",
-      category: <FaCheck color="#98b278" size={"30px"} />,
-      price: <FaCheck color="#98b278" size={"30px"} />,
+      category: <FaCheck color="#000080" size={"30px"} />,
+      price: <FaCheck color="#000080" size={"30px"} />,
     },
     {
       id: 2,
       name: "Ceiling Fans",
-      category: <FaCheck color="#98b278" size={"30px"} />,
-      price: <FaCheck color="#98b278" size={"30px"} />,
+      category: <FaCheck color="#000080" size={"30px"} />,
+      price: <FaCheck color="#000080" size={"30px"} />,
     },
     {
       id: 3,
       name: "Shelves",
-      category: <FaCheck color="#98b278" size={"30px"} />,
-      price: <FaCheck color="#98b278" size={"30px"} />,
+      category: <FaCheck color="#000080" size={"30px"} />,
+      price: <FaCheck color="#000080" size={"30px"} />,
     },
     {
       id: 4,
       name: "Outside Cabinets",
-      category: <FaCheck color="#98b278" size={"30px"} />,
-      price: <FaCheck color="#98b278" size={"30px"} />,
+      category: <FaCheck color="#000080" size={"30px"} />,
+      price: <FaCheck color="#000080" size={"30px"} />,
     },
     {
       id: 5,
       name: "Inside Cabinets (must be emptied)",
       category: "",
-      price: <FaCheck color="#98b278" size={"30px"} />,
+      price: <FaCheck color="#000080" size={"30px"} />,
     },
     {
       id: 5,
       name: "Blinds",
       category: "",
-      price: <FaCheck color="#98b278" size={"30px"} />,
+      price: <FaCheck color="#000080" size={"30px"} />,
     },
     {
       id: 5,
       name: "Inside Windows and Tracks",
       category: "",
-      price: <FaCheck color="#98b278" size={"30px"} />,
+      price: <FaCheck color="#000080" size={"30px"} />,
     },
     {
       id: 5,
       name: "Wall Marks",
       category: "",
-      price: <FaCheck color="#98b278" size={"30px"} />,
+      price: <FaCheck color="#000080" size={"30px"} />,
     },
     {
       id: 5,
       name: "Exhaust Fans",
       category: "",
-      price: <FaCheck color="#98b278" size={"30px"} />,
+      price: <FaCheck color="#000080" size={"30px"} />,
     },
   ];
 
@@ -100,26 +100,26 @@ const CleaningService = () => {
     {
       id: 1,
       name: "Toilet",
-      category: <FaCheck color="#98b278" size={"30px"} />,
-      price: <FaCheck color="#98b278" size={"30px"} />,
+      category: <FaCheck color="#000080" size={"30px"} />,
+      price: <FaCheck color="#000080" size={"30px"} />,
     },
     {
       id: 2,
       name: "Shower / Bath",
-      category: <FaCheck color="#98b278" size={"30px"} />,
-      price: <FaCheck color="#98b278" size={"30px"} />,
+      category: <FaCheck color="#000080" size={"30px"} />,
+      price: <FaCheck color="#000080" size={"30px"} />,
     },
     {
       id: 3,
       name: "Sinks",
-      category: <FaCheck color="#98b278" size={"30px"} />,
-      price: <FaCheck color="#98b278" size={"30px"} />,
+      category: <FaCheck color="#000080" size={"30px"} />,
+      price: <FaCheck color="#000080" size={"30px"} />,
     },
     {
       id: 4,
       name: "Mirrors",
-      category: <FaCheck color="#98b278" size={"30px"} />,
-      price: <FaCheck color="#98b278" size={"30px"} />,
+      category: <FaCheck color="#000080" size={"30px"} />,
+      price: <FaCheck color="#000080" size={"30px"} />,
     },
   ];
 
@@ -130,7 +130,7 @@ const CleaningService = () => {
         <Text
           fontSize={{ base: "20px", md: "40px" }}
           fontWeight={{ base: "600", md: "700" }}
-          color={"#98b278"}
+          color={"#000080"}
           textAlign={"center"}
         >
           Services
@@ -149,7 +149,7 @@ const CleaningService = () => {
         </Text>
         <Text
           fontSize={{ base: "16px", md: "30px" }}
-          color={"#98b278"}
+          color={"#000080"}
           textAlign={"center"}
         >
           Compare our services to see what best fits your needs.
@@ -158,13 +158,24 @@ const CleaningService = () => {
           <Table.Root size={"lg"}>
             <Table.Header>
               <Table.Row bgColor={"#fff"}>
-                <Table.ColumnHeader color={'#000'} fontSize={{ base: "13px", lg: "18px" }}>
+                <Table.ColumnHeader
+                  color={"#000"}
+                  fontSize={{ base: "13px", lg: "18px" }}
+                >
                   Cleaning Tasks (All Rooms)
                 </Table.ColumnHeader>
-                <Table.ColumnHeader color={'#000'} fontSize={{ base: "13px", lg: "18px" }} textAlign="center">
+                <Table.ColumnHeader
+                  color={"#000"}
+                  fontSize={{ base: "13px", lg: "18px" }}
+                  textAlign="center"
+                >
                   Standard Cleaning
                 </Table.ColumnHeader>
-                <Table.ColumnHeader color={'#000'} fontSize={{ base: "13px", lg: "18px" }} textAlign="center">
+                <Table.ColumnHeader
+                  color={"#000"}
+                  fontSize={{ base: "13px", lg: "18px" }}
+                  textAlign="center"
+                >
                   Deep/Vacate Cleaning
                 </Table.ColumnHeader>
               </Table.Row>
@@ -202,13 +213,24 @@ const CleaningService = () => {
           <Table.Root size={"lg"}>
             <Table.Header>
               <Table.Row bgColor={"#fff"}>
-                <Table.ColumnHeader color={'#000'} fontSize={{ base: "13px", lg: "18px" }}>
+                <Table.ColumnHeader
+                  color={"#000"}
+                  fontSize={{ base: "13px", lg: "18px" }}
+                >
                   Surfaces & Fixtures (All Rooms)
                 </Table.ColumnHeader>
-                <Table.ColumnHeader color={'#000'} fontSize={{ base: "13px", lg: "18px" }} textAlign="center">
+                <Table.ColumnHeader
+                  color={"#000"}
+                  fontSize={{ base: "13px", lg: "18px" }}
+                  textAlign="center"
+                >
                   Standard Cleaning
                 </Table.ColumnHeader>
-                <Table.ColumnHeader color={'#000'} fontSize={{ base: "13px", lg: "18px" }} textAlign="center">
+                <Table.ColumnHeader
+                  color={"#000"}
+                  fontSize={{ base: "13px", lg: "18px" }}
+                  textAlign="center"
+                >
                   Deep/Vacate Cleaning
                 </Table.ColumnHeader>
               </Table.Row>
@@ -246,13 +268,24 @@ const CleaningService = () => {
           <Table.Root size={"lg"}>
             <Table.Header>
               <Table.Row bgColor={"#fff"}>
-                <Table.ColumnHeader color={'#000'} fontSize={{ base: "13px", lg: "18px" }}>
+                <Table.ColumnHeader
+                  color={"#000"}
+                  fontSize={{ base: "13px", lg: "18px" }}
+                >
                   Bathroom / Laundry
                 </Table.ColumnHeader>
-                <Table.ColumnHeader color={'#000'} fontSize={{ base: "13px", lg: "18px" }} textAlign="center">
+                <Table.ColumnHeader
+                  color={"#000"}
+                  fontSize={{ base: "13px", lg: "18px" }}
+                  textAlign="center"
+                >
                   Standard Cleaning
                 </Table.ColumnHeader>
-                <Table.ColumnHeader color={'#000'}            fontSize={{ base: "13px", lg: "18px" }} textAlign="center">
+                <Table.ColumnHeader
+                  color={"#000"}
+                  fontSize={{ base: "13px", lg: "18px" }}
+                  textAlign="center"
+                >
                   Deep/Vacate Cleaning
                 </Table.ColumnHeader>
               </Table.Row>

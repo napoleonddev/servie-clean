@@ -1,4 +1,3 @@
-
 :root {
   /* Light mode colors */
   --background: #ffffff;
@@ -10,7 +9,8 @@
 }
 
 /* Global styles */
-html, body {
+html,
+body {
   max-width: 100vw;
   overflow-x: hidden;
 }
@@ -43,5 +43,5 @@ body.dark-mode {
 }
 
 .green {
-  background-color: #98b278;
+  background-color: #000080;
 }

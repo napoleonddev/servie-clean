@@ -33,7 +33,6 @@ import blogData from "@/components/data/blogdata";
 
 // Blog data with detailed content
 
-
 const relatedPostsData = [
   {
     author: "Cameron Williamson",
@@ -68,15 +67,19 @@ const categories = [
 
 // Blog Listing Page Component
 const BlogPage = () => {
-
   const router = useRouter();
 
   const onPostClick = (post) => {
     router.push(`/blog/${post.id}`);
   };
-  
+
   return (
-    <Flex direction={{ base: "column", md: "row" }} gap="20px" py={8} p={{ base: "0 20px 0 20px", md: "0 0 0 60px" }}>
+    <Flex
+      direction={{ base: "column", md: "row" }}
+      gap="20px"
+      py={8}
+      p={{ base: "0 20px 0 20px", md: "0 0 0 60px" }}
+    >
       <SimpleGrid columns={{ base: 1, md: 2 }} gap={"20px"}>
         {blogData.map((post) => (
           <VStack key={post.id} align="stretch" spacing={4} maxW={"700px"}>
@@ -88,7 +91,7 @@ const BlogPage = () => {
 
             <Heading
               size="lg"
-              color="#98b278"
+              color="#000080"
               cursor="pointer"
               onClick={() => onPostClick(post)}
               _hover={{ color: "#677c4a" }}
@@ -117,7 +120,7 @@ const BlogPage = () => {
                 w="100%"
                 className="green"
                 size="sm"
-                borderRadius={'20px'}
+                borderRadius={"20px"}
                 onClick={() => onPostClick(post)}
               >
                 Read More

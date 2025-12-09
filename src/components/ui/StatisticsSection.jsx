@@ -7,9 +7,7 @@ const StatisticsSection = ({ statsData, bg = "#fff", textColor = "#000" }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [animationKey, setAnimationKey] = useState(0);
   const sectionRef = useRef(null);
-  const [animatedValues, setAnimatedValues] = useState(
-    statsData.map(() => 0)
-  );
+  const [animatedValues, setAnimatedValues] = useState(statsData.map(() => 0));
 
   // Intersection Observer: triggers when section enters viewport
   useEffect(() => {
@@ -73,7 +71,13 @@ const StatisticsSection = ({ statsData, bg = "#fff", textColor = "#000" }) => {
   }, [isVisible, animationKey, statsData]);
 
   return (
-    <Box ref={sectionRef} bg={bg} py="60px" px={{ base: "20px", md: "60px" }} color={textColor}>
+    <Box
+      ref={sectionRef}
+      bg={bg}
+      py="60px"
+      px={{ base: "20px", md: "60px" }}
+      color={textColor}
+    >
       <Flex
         justify="space-between"
         align="center"
@@ -113,7 +117,7 @@ const StatisticsSection = ({ statsData, bg = "#fff", textColor = "#000" }) => {
             <Box
               w="60px"
               h="4px"
-              bg={stat.lineColor || stat.color || "#36B864"}
+              bg={stat.lineColor || stat.color || "#000080"}
               opacity="0.7"
               mx="auto"
               mt="16px"

@@ -137,7 +137,7 @@
 //               <Button
 //                 mt="6"
 //                 p="8px"
-//                 bg="#98b278"
+//                 bg="#000080"
 //                 color="white"
 //                 onClick={handleNextStep}
 //                 _hover={{ bg: "#88a068" }}
@@ -361,147 +361,154 @@ const Booking = () => {
         w={{ base: "100%", md: "800px" }}
       >
         <Box
-              p={{ base: 4, md: 6 }}
-              bg="blue.50"
-              borderRadius="lg"
-              minH="70px"
-              mb={'20px'}
-            >
-              <Flex justify={'space-between'}>
-                <Text fontSize={{ base: "14px", md: "16px" }}>House Cleaning And Other Household Activities 01_020_0120_1_1:</Text>
-                <Text fontSize={{ base: "14px", md: "16px" }} fontWeight={600}>$58.03</Text>
-              </Flex>
-              <Flex justify={'space-between'}>
-                <Text fontSize={{ base: "14px", md: "16px" }}>House or Yard Maintenance 01_019_0120_1_1:</Text>
-                <Text fontSize={{ base: "14px", md: "16px" }} fontWeight={600}>$56.98</Text>
-              </Flex>
-            </Box>
+          p={{ base: 4, md: 6 }}
+          bg="blue.50"
+          borderRadius="lg"
+          minH="70px"
+          mb={"20px"}
+        >
+          <Flex justify={"space-between"}>
+            <Text fontSize={{ base: "14px", md: "16px" }}>
+              House Cleaning And Other Household Activities 01_020_0120_1_1:
+            </Text>
+            <Text fontSize={{ base: "14px", md: "16px" }} fontWeight={600}>
+              $58.03
+            </Text>
+          </Flex>
+          <Flex justify={"space-between"}>
+            <Text fontSize={{ base: "14px", md: "16px" }}>
+              House or Yard Maintenance 01_019_0120_1_1:
+            </Text>
+            <Text fontSize={{ base: "14px", md: "16px" }} fontWeight={600}>
+              $56.98
+            </Text>
+          </Flex>
+        </Box>
         <Text fontSize="2xl" fontWeight="bold" mb={6} textAlign="center">
           {step === 1 ? "Enter Your Details" : "Review Details"}
         </Text>
 
         {step === 1 && (
-            <VStack align="stretch" spacing="5">
-              <Box>
-                <Text mb="1">Full Name</Text>
-                <Input
-                  placeholder="John Doe"
-                  pl="12px"
-                  value={details.name}
-                  onChange={(e) =>
-                    setDetails({ ...details, name: e.target.value })
-                  }
-                />
-              </Box>
+          <VStack align="stretch" spacing="5">
+            <Box>
+              <Text mb="1">Full Name</Text>
+              <Input
+                placeholder="John Doe"
+                pl="12px"
+                value={details.name}
+                onChange={(e) =>
+                  setDetails({ ...details, name: e.target.value })
+                }
+              />
+            </Box>
 
-              <Box>
-                <Text mb="1">Address</Text>
-                <Input
-                  placeholder="Abc Street, City, State, ZIP"
-                  pl="12px"
-                  value={details.address}
-                  onChange={(e) =>
-                    setDetails({ ...details, address: e.target.value })
-                  }
-                />
-              </Box>
+            <Box>
+              <Text mb="1">Address</Text>
+              <Input
+                placeholder="Abc Street, City, State, ZIP"
+                pl="12px"
+                value={details.address}
+                onChange={(e) =>
+                  setDetails({ ...details, address: e.target.value })
+                }
+              />
+            </Box>
 
-              <Box>
-                <Text mb="1">Email</Text>
-                <Input
-                  type="email"
-                  placeholder="you@example.com"
-                  pl="12px"
-                  value={details.email}
-                  onChange={(e) =>
-                    setDetails({ ...details, email: e.target.value })
-                  }
-                />
-              </Box>
+            <Box>
+              <Text mb="1">Email</Text>
+              <Input
+                type="email"
+                placeholder="you@example.com"
+                pl="12px"
+                value={details.email}
+                onChange={(e) =>
+                  setDetails({ ...details, email: e.target.value })
+                }
+              />
+            </Box>
 
-              <Box>
-                <Text mb="1">NDIS number</Text>
-                <Input
-                  type="text"
-                  placeholder="Enter your NDIS number"
-                  pl="12px"
-                  value={details.ndis}
-                  onChange={(e) =>
-                    setDetails({ ...details, ndis: e.target.value })
-                  }
-                />
-              </Box>
+            <Box>
+              <Text mb="1">NDIS number</Text>
+              <Input
+                type="text"
+                placeholder="Enter your NDIS number"
+                pl="12px"
+                value={details.ndis}
+                onChange={(e) =>
+                  setDetails({ ...details, ndis: e.target.value })
+                }
+              />
+            </Box>
 
-              <Box>
-                <Text mb="1">Phone Number</Text>
-                <Input
-                  placeholder="(555) 555-5555"
-                  pl="12px"
-                  value={details.phone}
-                  onChange={(e) =>
-                    setDetails({ ...details, phone: e.target.value })
-                  }
-                />
-              </Box>
+            <Box>
+              <Text mb="1">Phone Number</Text>
+              <Input
+                placeholder="(555) 555-5555"
+                pl="12px"
+                value={details.phone}
+                onChange={(e) =>
+                  setDetails({ ...details, phone: e.target.value })
+                }
+              />
+            </Box>
 
-              <Box>
-                <Text mb="1">Plan Details</Text>
-                <Input
-                  placeholder="Enter your plan details"
-                  pl="12px"
-                  value={details.planDetail}
-                  onChange={(e) =>
-                    setDetails({ ...details, planDetail: e.target.value })
-                  }
-                />
-              </Box>
+            <Box>
+              <Text mb="1">Plan Details</Text>
+              <Input
+                placeholder="Enter your plan details"
+                pl="12px"
+                value={details.planDetail}
+                onChange={(e) =>
+                  setDetails({ ...details, planDetail: e.target.value })
+                }
+              />
+            </Box>
 
-              <Box>
-                <Text mb="1">Service</Text>
-                <Input
-                  placeholder="Enter the service you require"
-                  pl="12px"
-                  value={details.service}
-                  onChange={(e) =>
-                    setDetails({ ...details, service: e.target.value })
-                  }
-                />
-              </Box>
+            <Box>
+              <Text mb="1">Service</Text>
+              <Input
+                placeholder="Enter the service you require"
+                pl="12px"
+                value={details.service}
+                onChange={(e) =>
+                  setDetails({ ...details, service: e.target.value })
+                }
+              />
+            </Box>
 
-              <Box>
-                <Text mb="1">Frequency</Text>
-                <Input
-                  placeholder="Enter the frequency of the service"
-                  pl="12px"
-                  value={details.frequency}
-                  onChange={(e) =>
-                    setDetails({ ...details, frequency: e.target.value })
-                  }
-                />
-              </Box>
+            <Box>
+              <Text mb="1">Frequency</Text>
+              <Input
+                placeholder="Enter the frequency of the service"
+                pl="12px"
+                value={details.frequency}
+                onChange={(e) =>
+                  setDetails({ ...details, frequency: e.target.value })
+                }
+              />
+            </Box>
 
-              {!isComplete ? (
-                <Text color="red" fontSize="14px" fontWeight={500}>
-                  Please fill in all fields to continue.
-                </Text>
-              ) : (
-                <Text color="green" fontSize="14px" fontWeight={500}>
-                  All details entered!
-                </Text>
-              )}
+            {!isComplete ? (
+              <Text color="red" fontSize="14px" fontWeight={500}>
+                Please fill in all fields to continue.
+              </Text>
+            ) : (
+              <Text color="green" fontSize="14px" fontWeight={500}>
+                All details entered!
+              </Text>
+            )}
 
-              <Button
-                mt={4}
-                bg="#98b278"
-                color="white"
-                _hover={{ bg: "#88a068" }}
-                onClick={handleNextStep}
-                disabled={!isComplete}
-              >
-                Continue
-              </Button>
-            </VStack>
-            
+            <Button
+              mt={4}
+              bg="#000080"
+              color="white"
+              _hover={{ bg: "#88a068" }}
+              onClick={handleNextStep}
+              disabled={!isComplete}
+            >
+              Continue
+            </Button>
+          </VStack>
         )}
 
         {step === 2 && (
@@ -524,7 +531,7 @@ const Booking = () => {
               </Button>
 
               <Button
-                bg="#98b278"
+                bg="#000080"
                 color="white"
                 _hover={{ bg: "#88a068" }}
                 onClick={() => alert("Submit / Pay action")}
@@ -536,7 +543,6 @@ const Booking = () => {
           </VStack>
         )}
       </Box>
-      
     </Flex>
   );
 };
