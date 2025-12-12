@@ -36,10 +36,10 @@ export default function Home() {
   }, []);
 
   const homeStats = [
-    { id: 1, label: "Happy Clients", value: 157, color: "#000080" },
-    { id: 2, label: "Expert Workers", value: 63, color: "#000080" },
-    { id: 3, label: "Projects Done", value: 189, color: "#000080" },
-    { id: 4, label: "Years Of Experience", value: 7, color: "#000080" },
+    { id: 1, label: "Happy Clients", value: 150, color: "#000080" },
+    { id: 2, label: "Expert Workers", value: 50, color: "#000080" },
+    { id: 3, label: "Projects Done", value: 200, color: "#000080" },
+    { id: 4, label: "Years Of Experience", value: 4, color: "#000080" },
   ];
 
   return (
@@ -47,7 +47,7 @@ export default function Home() {
       <Header />
       <Hero onGetStarted={goToBooking} />
       {/* <div ref={serviceRef}> */}
-      <Service onGetStarted={goToBooking} />
+      {/* <Service onGetStarted={goToBooking} /> */}
       {/* </div> */}
       <Experience />
       {/* <div ref={bookingRef} id="booking-section">

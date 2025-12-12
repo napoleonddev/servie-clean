@@ -73,7 +73,7 @@ const Footer = () => {
             color="#6B7280"
             textAlign={"center"}
           >
-            2025 “CLEANCARE” All Rights Reserved
+            2025 “CLEANIECARE” All Rights Reserved
           </Text>
           <Image src="/eco2.png" w="60px" />
         </Flex>

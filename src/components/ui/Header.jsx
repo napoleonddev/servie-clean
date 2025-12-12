@@ -61,7 +61,7 @@ const Header = () => {
   const navLinks = [
     { name: "Home", href: "/" },
     { name: "About us", href: "/about" },
-    { name: "Service", href: "/service" },
+    // { name: "Service", href: "/service" },
     // { name: "Testimonials", href: "/testimonials" },
     // { name: "Blog", href: "/blog" },
     { name: "Contact", href: "/contact" },
@@ -84,7 +84,10 @@ const Header = () => {
               <Box>
                 <Text fontSize={"12px"}>Working Hours</Text>
                 <Text fontSize={"12px"} fontWeight={600}>
-                  Mon - Sat: 08.00am - 06.00pm
+                  Mon - Fri: 08.00am - 06.00pm
+                </Text>
+                <Text fontSize={"12px"} fontWeight={600}>
+                  Sat: 08.00am - 12.00pm
                 </Text>
               </Box>{" "}
             </Flex>
@@ -151,7 +154,7 @@ const Header = () => {
             >
               <ChakraLink href="/">Home</ChakraLink>
               <ChakraLink href="/about">About us</ChakraLink>
-              <ChakraLink href="/service">Service</ChakraLink>
+              {/* <ChakraLink href="/service">Service</ChakraLink> */}
               {/* <ChakraLink href="/testimonials">Testimonials</ChakraLink>
               <ChakraLink href="/blog">Blog</ChakraLink> */}
               <ChakraLink href="/contact">Contact</ChakraLink>
@@ -208,13 +211,13 @@ const Header = () => {
                     >
                       About us
                     </ChakraLink>
-                    <ChakraLink
+                    {/* <ChakraLink
                       href="/service"
                       close={close}
                       onClick={(e) => setClose(e.close)}
                     >
                       Service
-                    </ChakraLink>
+                    </ChakraLink> */}
                     {/* <ChakraLink
                       href="/testimonials"
                       close={close}

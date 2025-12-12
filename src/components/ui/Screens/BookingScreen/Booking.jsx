@@ -315,7 +315,16 @@
 "use client";
 
 import React, { useState } from "react";
-import { Box, Text, Flex, VStack, Input, Button } from "@chakra-ui/react";
+import {
+  Box,
+  Text,
+  Flex,
+  VStack,
+  Input,
+  Button,
+  Select,
+} from "@chakra-ui/react";
+import { Portal } from "@chakra-ui/react";
 
 const Booking = () => {
   // Step control (if you still want multi-step flow)
@@ -333,6 +342,8 @@ const Booking = () => {
     frequency: "",
   });
 
+  console.log("details", details);
+
   const handleNextStep = () => setStep((prev) => Math.min(prev + 1, 2));
   const handlePrevStep = () => setStep((prev) => Math.max(prev - 1, 1));
 
@@ -343,8 +354,9 @@ const Booking = () => {
     details.address !== "" &&
     details.ndis !== "" &&
     details.planDetail !== "" &&
-    details.service !== "" &&
-    details.frequency !== "";
+    // details.service !== "" &&
+    details.frequency !== "" &&
+    details.service !== "";
 
   return (
     <Flex
@@ -360,30 +372,6 @@ const Booking = () => {
         boxShadow="xl"
         w={{ base: "100%", md: "800px" }}
       >
-        <Box
-          p={{ base: 4, md: 6 }}
-          bg="blue.50"
-          borderRadius="lg"
-          minH="70px"
-          mb={"20px"}
-        >
-          <Flex justify={"space-between"}>
-            <Text fontSize={{ base: "14px", md: "16px" }}>
-              House Cleaning And Other Household Activities 01_020_0120_1_1:
-            </Text>
-            <Text fontSize={{ base: "14px", md: "16px" }} fontWeight={600}>
-              $58.03
-            </Text>
-          </Flex>
-          <Flex justify={"space-between"}>
-            <Text fontSize={{ base: "14px", md: "16px" }}>
-              House or Yard Maintenance 01_019_0120_1_1:
-            </Text>
-            <Text fontSize={{ base: "14px", md: "16px" }} fontWeight={600}>
-              $56.98
-            </Text>
-          </Flex>
-        </Box>
         <Text fontSize="2xl" fontWeight="bold" mb={6} textAlign="center">
           {step === 1 ? "Enter Your Details" : "Review Details"}
         </Text>
@@ -464,7 +452,7 @@ const Booking = () => {
               />
             </Box>
 
-            <Box>
+            {/* <Box>
               <Text mb="1">Service</Text>
               <Input
                 placeholder="Enter the service you require"
@@ -474,7 +462,7 @@ const Booking = () => {
                   setDetails({ ...details, service: e.target.value })
                 }
               />
-            </Box>
+            </Box> */}
 
             <Box>
               <Text mb="1">Frequency</Text>
@@ -486,6 +474,75 @@ const Booking = () => {
                   setDetails({ ...details, frequency: e.target.value })
                 }
               />
+            </Box>
+
+            <Box>
+              <Text mb="1">Select Service</Text>
+
+              <select
+                style={{
+                  width: "100%",
+                  padding: "12px",
+                  borderRadius: "8px",
+                  border: "1px solid #CBD5E0",
+                  backgroundColor: "white",
+                  fontSize: "16px",
+                  outline: "none",
+                  cursor: "pointer",
+                }}
+                placeholder="Choose a service"
+                value={details.service}
+                onChange={(e) =>
+                  setDetails({ ...details, service: e.target.value })
+                }
+              >
+                <option value="" disabled>
+                  Choose a service
+                </option>
+
+                <option value="House Cleaning 01_020_0120_1_1 ($58.03)">
+                  House Cleaning And Other Household Activities 01_020_0120_1_1
+                  — $58.03
+                </option>
+
+                <option value="Yard Maintenance 01_019_0120_1_1 ($56.98)">
+                  House or Yard Maintenance 01_019_0120_1_1 — $56.98
+                </option>
+              </select>
+
+              {/* <Select.Root
+                value={details.service}
+                onValueChange={(v) => setDetails({ ...details, service: v })}
+              >
+                <Select.HiddenSelect />
+                <Select.Label>Select Service</Select.Label>
+
+                <Select.Control>
+                  <Select.Trigger>
+                    <Select.ValueText placeholder="Select Service" />
+                  </Select.Trigger>
+                  <Select.IndicatorGroup>
+                    <Select.Indicator />
+                  </Select.IndicatorGroup>
+                </Select.Control>
+
+                <Portal>
+                  <Select.Positioner>
+                    <Select.Content>
+                      <Select.Item value="House Cleaning 01_020_0120_1_1 ($58.03)">
+                        House Cleaning And Other Household Activities
+                        01_020_0120_1_1 — $58.03
+                        <Select.ItemIndicator />
+                      </Select.Item>
+
+                      <Select.Item value="Yard Maintenance 01_019_0120_1_1 ($56.98)">
+                        House or Yard Maintenance 01_019_0120_1_1 — $56.98
+                        <Select.ItemIndicator />
+                      </Select.Item>
+                    </Select.Content>
+                  </Select.Positioner>
+                </Portal>
+              </Select.Root> */}
             </Box>
 
             {!isComplete ? (

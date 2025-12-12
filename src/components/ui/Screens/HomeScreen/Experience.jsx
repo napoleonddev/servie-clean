@@ -11,6 +11,7 @@ const Experience = () => {
         gap={"15px"}
         px="60px"
         pos={"relative"}
+        pt='40px'
       >
         <Box flex={{ base: 0, md: 1 }} ml="30px">
           <HStack

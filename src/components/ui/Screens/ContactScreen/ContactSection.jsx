@@ -47,7 +47,7 @@ const ContactSection = () => {
             {
               icon: "/location.png",
               text: "Location",
-              description: "149a Canning Hwy, South Perth, WA, 6151",
+              description: "Kenwick, WA 6107, Australia",
               social: [],
             },
             {
