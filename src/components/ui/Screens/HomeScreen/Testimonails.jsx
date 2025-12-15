@@ -29,42 +29,42 @@ const Testimonails = ({toDisp}) => {
   <SimpleGrid columns={{ base: 1, md: 3 }} gap="40px" my="60px">
     {[
       {
-        name: "Steve Smith",
+        name: "Steve",
         role: "Managing Director",
         description:
           "Outstanding service! The team was professional, efficient, and delivered exactly what I needed on time.",
         icon: "/star.png",
       },
       {
-        name: "Albert Flores",
+        name: "Georgie",
         role: "CEO, BrightTech",
         description:
           "Their attention to detail and commitment to quality are unmatched. I’ll definitely work with them again.",
         icon: "/star.png",
       },
       {
-        name: "Robert Fox",
+        name: "Mervyn",
         role: "Entrepreneur",
         description:
           "Exceptional experience from start to finish. The project exceeded my expectations in every way.",
         icon: "/star.png",
       },
       {
-        name: "Darlene Robertson",
+        name: "Robert",
         role: "Head of Sales",
         description:
           "The team’s expertise and friendly approach made the entire process smooth and stress-free.",
         icon: "/star.png",
       },
       {
-        name: "Kathryn Murphy",
+        name: "Mona",
         role: "Homeowner",
         description:
           "Reliable, skilled, and responsive — I couldn’t be happier with the results. Highly recommended!",
         icon: "/star.png",
       },
       {
-        name: "Marvin McKinney",
+        name: "Jason",
         role: "Global Director",
         description:
           "A truly professional team that delivers top-notch service every time. Excellent communication throughout.",
@@ -80,19 +80,9 @@ const Testimonails = ({toDisp}) => {
         _hover={{ boxShadow: "lg", transform: "translateY(-4px)", transition: "all 0.3s ease" }}
       >
         <Flex gap="20px" align="center">
-          <Box
-            w="40px"
-            h="40px"
-            borderRadius="full"
-            border="1px solid #DFDFDF"
-            bg="#f4f4f4"
-          />
           <Box>
             <Text fontWeight={700} fontSize="16px" color="#04090D">
               {item.name}
-            </Text>
-            <Text fontWeight={400} fontSize="14px" color="#6B7280">
-              {item.role}
             </Text>
           </Box>
         </Flex>

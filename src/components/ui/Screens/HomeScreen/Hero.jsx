@@ -68,9 +68,9 @@ const Hero = ({ onGetStarted }) => {
           textOverflow={"ellipsis"}
           fontWeight={400}
         >
-          We redefine the standards of cleanliness with an unwavering <br />{" "}
-          commitment to excellence, environmental responsibility, and <br />{" "}
-          ethical practices.
+          At Cleaniecare, we provide reliable, high-quality NDIS cleaning <br /> and home maintenance services designed to help participants <br /> live safely, comfortably, and independently. <br />
+We understand the unique needs of people living with disability, <br /> and our trained team delivers every service with care, respect, <br /> dignity, and professionalism. <br />
+Whether you require regular household cleaning, <br /> one-off deep cleaning, yard maintenance, or specialised support, <br /> Cleaniecare is here to make everyday living easier.
         </Text>
         <Text
           display={{ base: "block", md: "none" }}
@@ -80,8 +80,8 @@ const Hero = ({ onGetStarted }) => {
           px="30px"
           textAlign={"center"}
         >
-          We redefine the standards of cleanliness with an unwavering commitment
-          to excellence, environmental responsibility, and ethical practices.
+          At Cleaniecare, we provide reliable, high-quality NDIS cleaning and home maintenance services designed to help participants live safely, comfortably, and independently.
+We understand the unique needs of people living with disability, and our trained team delivers every service with care, respect, dignity, and professionalism.
         </Text>
         <Flex gap="12px">
           <Button

@@ -21,38 +21,38 @@ const Service = ({ onGetStarted }) => {
       tag: "Learn More",
       icon2: <Image src="/diag_arrow.png" />,
     },
-    {
-      icon: <Image src="/buildings.png" />,
-      title: "Office Cleaning",
-      description:
-        "Dusting and Wiping surfaces. Removal of cobwebs from ceiling. Vacuuming and mopping floors. Cleaning office furniture. Emptying trash bins. Sanitising high-touch surfaces.",
-      tag: "Learn More",
-      icon2: <Image src="/diag_arrow.png" />,
-    },
+    // {
+    //   icon: <Image src="/buildings.png" />,
+    //   title: "Office Cleaning",
+    //   description:
+    //     "Dusting and Wiping surfaces. Removal of cobwebs from ceiling. Vacuuming and mopping floors. Cleaning office furniture. Emptying trash bins. Sanitising high-touch surfaces.",
+    //   tag: "Learn More",
+    //   icon2: <Image src="/diag_arrow.png" />,
+    // },
     {
       icon: <Image src="/painter.png" />,
-      title: "Facility Management",
+      title: "Gardening",
       description:
-        "Let us take the stress off you in the management of your facilities. We are able to assist your business with everything facility management providing services such as building and common area maintenance and cleaning, public facility maintenance and restroom cleaning.",
+        "Our gardening maintenance service is designed to keep your outdoor spaces healthy, neat, and visually appealing. This includes routine tasks such as lawn mowing, weeding, pruning and trimming plants, watering, removal of garden waste, and general plant care. The goal is to promote plant health, and maintain a well-kept garden throughout the seasons.",
       tag: "Learn More",
       icon2: <Image src="/diag_arrow.png" />,
     },
     {
       icon: <Image src="/carpenter.png" />,
-      title: "Pre-construction Cleaning",
+      title: "General Houshold Maintenance",
       description:
-        "Remove any remaining nails or screws from studs or ceiling joists. Brush ceiling, studs and exterior walls with a bristle broom or hand brush to remove all invisible insulation and pieces of drywall and loosen mold spores. Work from top to bottom.",
+        "Our general household maintenance service helps keep your home clean, organized, and comfortable on a regular basis. This includes routine cleaning tasks such as dusting surfaces, vacuuming and mopping floors, cleaning kitchens and bathrooms, and managing light tidying.",
       tag: "Learn More",
       icon2: <Image src="/diag_arrow.png" />,
     },
-    {
-      icon: <Image src="/electrician.png" />,
-      title: "Post Construction Clean",
-      description:
-        "Thorough cleaning of all surfaces,Dust removal from ceilings, walls, and fixtures.Cleaning of spill, scuff, and other building splashes,Cleaning windows and glass,Polishing and sanitising surfaces Final inspection for any remaining debris.",
-      tag: "Learn More",
-      icon2: <Image src="/diag_arrow.png" />,
-    },
+    // {
+    //   icon: <Image src="/electrician.png" />,
+    //   title: "Post Construction Clean",
+    //   description:
+    //     "Thorough cleaning of all surfaces,Dust removal from ceilings, walls, and fixtures.Cleaning of spill, scuff, and other building splashes,Cleaning windows and glass,Polishing and sanitising surfaces Final inspection for any remaining debris.",
+    //   tag: "Learn More",
+    //   icon2: <Image src="/diag_arrow.png" />,
+    // },
     {
       icon: <Image src="/plumber.png" />,
       title: "Gutter Cleaning",
@@ -81,7 +81,7 @@ const Service = ({ onGetStarted }) => {
         in your facility’s needs. That’s why, when life happens, you can rest
         easy knowing that you’ve got one less thing to worry about.
       </Text>
-      <SimpleGrid columns={{ base: 1, md: 3 }} gap="40px" my="60px">
+      <SimpleGrid columns={{ base: 1, md: 2 }} gap="40px" my="60px">
         {services.map((service) => (
           <VStack
             key={service.title}

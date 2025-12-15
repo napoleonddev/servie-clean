@@ -47,7 +47,7 @@ export default function Home() {
       <Header />
       <Hero onGetStarted={goToBooking} />
       {/* <div ref={serviceRef}> */}
-      {/* <Service onGetStarted={goToBooking} /> */}
+      <Service />
       {/* </div> */}
       <Experience />
       {/* <div ref={bookingRef} id="booking-section">
