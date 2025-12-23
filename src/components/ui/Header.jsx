@@ -40,13 +40,6 @@ const Header = () => {
   };
 
   // When on homepage, scroll directly; otherwise, navigate to homepage with hash
-  const handleBookingClick = () => {
-    if (pathname === "/") {
-      scrollToBooking();
-    } else {
-      router.push("/#booking-section");
-    }
-  };
 
   const handleBookingClick2 = () => {
     router.push("/booking");

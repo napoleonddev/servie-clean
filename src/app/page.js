@@ -17,6 +17,10 @@ export default function Home() {
   const bookingRef = useRef(null);
   const router = useRouter();
 
+  const toBooking = () => {
+    router.push("/booking");
+  }
+
   const scrollToBooking = () => {
     if (bookingRef.current) {
       bookingRef.current.scrollIntoView({ behavior: "smooth" });
@@ -47,7 +51,7 @@ export default function Home() {
       <Header />
       <Hero onGetStarted={goToBooking} />
       {/* <div ref={serviceRef}> */}
-      <Service />
+      <Service toBooking={toBooking} />
       {/* </div> */}
       <Experience />
       {/* <div ref={bookingRef} id="booking-section">

@@ -123,7 +123,7 @@ const ContactSection = () => {
         </Box>
       </Box>
       <Box flex={1} mt={{ base: "20px", md: 0 }}>
-        <form action="https://formspree.io/f/manrdkkp" method="POST">
+        <form action="https://formspree.io/f/mnjaqwey" method="POST">
           <VStack gap={"20px"}>
             <Box>
               <Text>Name</Text>

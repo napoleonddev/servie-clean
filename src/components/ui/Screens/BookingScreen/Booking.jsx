@@ -323,6 +323,7 @@ import {
   Input,
   Button,
   Select,
+  HStack,
 } from "@chakra-ui/react";
 import { Portal } from "@chakra-ui/react";
 
@@ -352,7 +353,7 @@ const Booking = () => {
     details.email !== "" &&
     details.phone !== "" &&
     details.address !== "" &&
-    details.ndis !== "" &&
+    // details.ndis !== "" &&
     details.planDetail !== "" &&
     // details.service !== "" &&
     details.frequency !== "" &&
@@ -377,195 +378,225 @@ const Booking = () => {
         </Text>
 
         {step === 1 && (
-          <VStack align="stretch" spacing="5">
-            <Box>
-              <Text mb="1">Full Name</Text>
-              <Input
-                placeholder="John Doe"
-                pl="12px"
-                value={details.name}
-                onChange={(e) =>
-                  setDetails({ ...details, name: e.target.value })
-                }
-              />
-            </Box>
+          <form action="https://formspree.io/f/mnjaqwey" method="POST">
+            <VStack align="stretch" spacing="5">
+              <Box>
+                <HStack gap='3px'>
+                  <Text mb="1">Full Name</Text>
+                  <Text color={'red'}>*</Text>
+                </HStack>
+                <Input
+                  placeholder="John Doe"
+                  pl="12px"
+                  value={details.name}
+                  onChange={(e) =>
+                    setDetails({ ...details, name: e.target.value })
+                  }
+                  name="fullname"
+                />
+              </Box>
 
-            <Box>
-              <Text mb="1">Address</Text>
-              <Input
-                placeholder="Abc Street, City, State, ZIP"
-                pl="12px"
-                value={details.address}
-                onChange={(e) =>
-                  setDetails({ ...details, address: e.target.value })
-                }
-              />
-            </Box>
+              <Box>
+                <HStack gap='3px'>
+                  <Text mb="1">Address</Text>
+                  <Text color={'red'}>*</Text>
+                </HStack>
+                <Input
+                  placeholder="Abc Street, City, State, ZIP"
+                  pl="12px"
+                  value={details.address}
+                  onChange={(e) =>
+                    setDetails({ ...details, address: e.target.value })
+                  }
+                  name="address"
+                />
+              </Box>
 
-            <Box>
-              <Text mb="1">Email</Text>
-              <Input
-                type="email"
-                placeholder="you@example.com"
-                pl="12px"
-                value={details.email}
-                onChange={(e) =>
-                  setDetails({ ...details, email: e.target.value })
-                }
-              />
-            </Box>
+              <Box>
+                <HStack gap='3px'>
+                  <Text mb="1">Email</Text>
+                  <Text color={'red'}>*</Text>
+                </HStack>
+                <Input
+                  type="email"
+                  placeholder="you@example.com"
+                  pl="12px"
+                  value={details.email}
+                  onChange={(e) =>
+                    setDetails({ ...details, email: e.target.value })
+                  }
+                  name="email"
+                />
+              </Box>
 
-            <Box>
-              <Text mb="1">NDIS number</Text>
-              <Input
-                type="text"
-                placeholder="Enter your NDIS number"
-                pl="12px"
-                value={details.ndis}
-                onChange={(e) =>
-                  setDetails({ ...details, ndis: e.target.value })
-                }
-              />
-            </Box>
+              <Box>
+                <Text mb="1">NDIS number</Text>
+                <Input
+                  type="text"
+                  placeholder="Enter your NDIS number"
+                  pl="12px"
+                  value={details.ndis}
+                  onChange={(e) =>
+                    setDetails({ ...details, ndis: e.target.value })
+                  }
+                  name="ndis"
+                />
+              </Box>
 
-            <Box>
-              <Text mb="1">Phone Number</Text>
-              <Input
-                placeholder="(555) 555-5555"
-                pl="12px"
-                value={details.phone}
-                onChange={(e) =>
-                  setDetails({ ...details, phone: e.target.value })
-                }
-              />
-            </Box>
+              <Box>
+                <HStack gap='3px'>
+                  <Text mb="1">Phone Number</Text>
+                  <Text color={'red'}>*</Text>
+                </HStack>
+                <Input
+                  placeholder="(555) 555-5555"
+                  pl="12px"
+                  value={details.phone}
+                  onChange={(e) =>
+                    setDetails({ ...details, phone: e.target.value })
+                  }
+                  name="phone-number"
+                />
+              </Box>
 
-            <Box>
-              <Text mb="1">Plan Details</Text>
-              <Input
-                placeholder="Enter your plan details"
-                pl="12px"
-                value={details.planDetail}
-                onChange={(e) =>
-                  setDetails({ ...details, planDetail: e.target.value })
-                }
-              />
-            </Box>
+              <Box>
+                <HStack gap='3px'>
+                  <Text mb="1">Plan Details</Text>
+                  <Text color={'red'}>*</Text>
+                </HStack>
+                <Input
+                  placeholder="Enter your plan details"
+                  pl="12px"
+                  value={details.planDetail}
+                  onChange={(e) =>
+                    setDetails({ ...details, planDetail: e.target.value })
+                  }
+                  name="plan-details"
+                />
+              </Box>
 
-            {/* <Box>
-              <Text mb="1">Service</Text>
-              <Input
-                placeholder="Enter the service you require"
-                pl="12px"
-                value={details.service}
-                onChange={(e) =>
-                  setDetails({ ...details, service: e.target.value })
-                }
-              />
-            </Box> */}
+              {/* <Box>
+                <Text mb="1">Service</Text>
+                <Input
+                  placeholder="Enter the service you require"
+                  pl="12px"
+                  value={details.service}
+                  onChange={(e) =>
+                    setDetails({ ...details, service: e.target.value })
+                  }
+                />
+              </Box> */}
 
-            <Box>
-              <Text mb="1">Frequency</Text>
-              <Input
-                placeholder="Enter the frequency of the service"
-                pl="12px"
-                value={details.frequency}
-                onChange={(e) =>
-                  setDetails({ ...details, frequency: e.target.value })
-                }
-              />
-            </Box>
+              <Box>
+                <HStack gap='3px'>
+                  <Text mb="1">Frequency</Text>
+                  <Text color={'red'}>*</Text>
+                </HStack>
+                <Input
+                  placeholder="Enter the frequency of the service"
+                  pl="12px"
+                  value={details.frequency}
+                  onChange={(e) =>
+                    setDetails({ ...details, frequency: e.target.value })
+                  }
+                  name="frequency"
+                />
+              </Box>
 
-            <Box>
-              <Text mb="1">Select Service</Text>
+              <Box>
+                <HStack gap='3px'>
+                  <Text mb="1">Select Service</Text>
+                  <Text color={'red'}>*</Text>
+                </HStack>
+                <select
+                  style={{
+                    width: "100%",
+                    padding: "12px",
+                    borderRadius: "8px",
+                    border: "1px solid #CBD5E0",
+                    backgroundColor: "white",
+                    fontSize: "16px",
+                    outline: "none",
+                    cursor: "pointer",
+                  }}
+                  placeholder="Choose a service"
+                  value={details.service}
+                  onChange={(e) =>
+                    setDetails({ ...details, service: e.target.value })
+                  }
+                  name="service"
+                >
+                  <option value="" disabled>
+                    Choose a service
+                  </option>
 
-              <select
-                style={{
-                  width: "100%",
-                  padding: "12px",
-                  borderRadius: "8px",
-                  border: "1px solid #CBD5E0",
-                  backgroundColor: "white",
-                  fontSize: "16px",
-                  outline: "none",
-                  cursor: "pointer",
-                }}
-                placeholder="Choose a service"
-                value={details.service}
-                onChange={(e) =>
-                  setDetails({ ...details, service: e.target.value })
-                }
+                  <option value="House Cleaning 01_020_0120_1_1 ($58.03)">
+                    House Cleaning And Other Household Activities 01_020_0120_1_1
+                    — $58.03
+                  </option>
+
+                  <option value="Yard Maintenance 01_019_0120_1_1 ($56.98)">
+                    House or Yard Maintenance 01_019_0120_1_1 — $56.98
+                  </option>
+                </select>
+
+                {/* <Select.Root
+                  value={details.service}
+                  onValueChange={(v) => setDetails({ ...details, service: v })}
+                >
+                  <Select.HiddenSelect />
+                  <Select.Label>Select Service</Select.Label>
+
+                  <Select.Control>
+                    <Select.Trigger>
+                      <Select.ValueText placeholder="Select Service" />
+                    </Select.Trigger>
+                    <Select.IndicatorGroup>
+                      <Select.Indicator />
+                    </Select.IndicatorGroup>
+                  </Select.Control>
+
+                  <Portal>
+                    <Select.Positioner>
+                      <Select.Content>
+                        <Select.Item value="House Cleaning 01_020_0120_1_1 ($58.03)">
+                          House Cleaning And Other Household Activities
+                          01_020_0120_1_1 — $58.03
+                          <Select.ItemIndicator />
+                        </Select.Item>
+
+                        <Select.Item value="Yard Maintenance 01_019_0120_1_1 ($56.98)">
+                          House or Yard Maintenance 01_019_0120_1_1 — $56.98
+                          <Select.ItemIndicator />
+                        </Select.Item>
+                      </Select.Content>
+                    </Select.Positioner>
+                  </Portal>
+                </Select.Root> */}
+              </Box>
+
+              {!isComplete ? (
+                <Text color="red" fontSize="14px" fontWeight={500}>
+                  Please fill in all fields to continue.
+                </Text>
+              ) : (
+                <Text color="green" fontSize="14px" fontWeight={500}>
+                  All details entered!
+                </Text>
+              )}
+
+              <Button
+                mt={4}
+                bg="#000080"
+                color="white"
+                _hover={{ bg: "#88a068" }}
+                onClick={handleNextStep}
+                disabled={!isComplete}
               >
-                <option value="" disabled>
-                  Choose a service
-                </option>
-
-                <option value="House Cleaning 01_020_0120_1_1 ($58.03)">
-                  House Cleaning And Other Household Activities 01_020_0120_1_1
-                  — $58.03
-                </option>
-
-                <option value="Yard Maintenance 01_019_0120_1_1 ($56.98)">
-                  House or Yard Maintenance 01_019_0120_1_1 — $56.98
-                </option>
-              </select>
-
-              {/* <Select.Root
-                value={details.service}
-                onValueChange={(v) => setDetails({ ...details, service: v })}
-              >
-                <Select.HiddenSelect />
-                <Select.Label>Select Service</Select.Label>
-
-                <Select.Control>
-                  <Select.Trigger>
-                    <Select.ValueText placeholder="Select Service" />
-                  </Select.Trigger>
-                  <Select.IndicatorGroup>
-                    <Select.Indicator />
-                  </Select.IndicatorGroup>
-                </Select.Control>
-
-                <Portal>
-                  <Select.Positioner>
-                    <Select.Content>
-                      <Select.Item value="House Cleaning 01_020_0120_1_1 ($58.03)">
-                        House Cleaning And Other Household Activities
-                        01_020_0120_1_1 — $58.03
-                        <Select.ItemIndicator />
-                      </Select.Item>
-
-                      <Select.Item value="Yard Maintenance 01_019_0120_1_1 ($56.98)">
-                        House or Yard Maintenance 01_019_0120_1_1 — $56.98
-                        <Select.ItemIndicator />
-                      </Select.Item>
-                    </Select.Content>
-                  </Select.Positioner>
-                </Portal>
-              </Select.Root> */}
-            </Box>
-
-            {!isComplete ? (
-              <Text color="red" fontSize="14px" fontWeight={500}>
-                Please fill in all fields to continue.
-              </Text>
-            ) : (
-              <Text color="green" fontSize="14px" fontWeight={500}>
-                All details entered!
-              </Text>
-            )}
-
-            <Button
-              mt={4}
-              bg="#000080"
-              color="white"
-              _hover={{ bg: "#88a068" }}
-              onClick={handleNextStep}
-              disabled={!isComplete}
-            >
-              Continue
-            </Button>
-          </VStack>
+                Continue
+              </Button>
+            </VStack>
+          </form>
         )}
 
         {step === 2 && (

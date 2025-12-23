@@ -11,7 +11,7 @@ import { Box } from "@chakra-ui/react";
 import { useRouter } from "next/navigation";
 import React from "react";
 
-const Service = ({ onGetStarted }) => {
+const Service = ({ toBooking }) => {
   const services = [
     {
       icon: <Image src="/home.png" />,
@@ -120,7 +120,7 @@ const Service = ({ onGetStarted }) => {
               borderRadius="8px"
               fontWeight="bold"
               fontSize="16px"
-              onClick={onGetStarted}
+              onClick={toBooking}
             >
               BOOK NOW
             </Button>
