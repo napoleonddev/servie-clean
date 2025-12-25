@@ -354,7 +354,7 @@ const Booking = () => {
     details.phone !== "" &&
     details.address !== "" &&
     // details.ndis !== "" &&
-    details.planDetail !== "" &&
+    // details.planDetail !== "" &&
     // details.service !== "" &&
     details.frequency !== "" &&
     details.service !== "";
@@ -462,7 +462,7 @@ const Booking = () => {
               <Box>
                 <HStack gap='3px'>
                   <Text mb="1">Plan Details</Text>
-                  <Text color={'red'}>*</Text>
+                  {/* <Text color={'red'}>*</Text> */}
                 </HStack>
                 <Input
                   placeholder="Enter your plan details"
@@ -491,8 +491,43 @@ const Booking = () => {
                 <HStack gap='3px'>
                   <Text mb="1">Frequency</Text>
                   <Text color={'red'}>*</Text>
+                  <Box as='span' fontSize='12px' color='#7B7B7B'>(How often would you like the service?)</Box>
                 </HStack>
-                <Input
+                <select
+                  style={{
+                    width: "100%",
+                    padding: "12px",
+                    borderRadius: "8px",
+                    border: "1px solid #CBD5E0",
+                    backgroundColor: "white",
+                    fontSize: "16px",
+                    outline: "none",
+                    cursor: "pointer",
+                  }}
+                  placeholder="Choose a frequency"
+                  value={details.frequency}
+                  onChange={(e) =>
+                    setDetails({ ...details, frequency: e.target.value })
+                  }
+                  name="frequency"
+                >
+                  <option value="" disabled>
+                    Choose a frequency
+                  </option>
+
+                  <option value="weekly">
+                    Weekly
+                  </option>
+
+                  <option value="fortnightly">
+                    Fortnightly
+                  </option>
+
+                  <option value="monthly">
+                    Monthly
+                  </option>
+                </select>
+                {/* <Input
                   placeholder="Enter the frequency of the service"
                   pl="12px"
                   value={details.frequency}
@@ -500,7 +535,7 @@ const Booking = () => {
                     setDetails({ ...details, frequency: e.target.value })
                   }
                   name="frequency"
-                />
+                /> */}
               </Box>
 
               <Box>
@@ -589,9 +624,10 @@ const Booking = () => {
                 mt={4}
                 bg="#000080"
                 color="white"
-                _hover={{ bg: "#88a068" }}
-                onClick={handleNextStep}
+                _hover={{ bg: "#4c4cd6" }}
+                // onClick={handleNextStep}
                 disabled={!isComplete}
+                type="submit"
               >
                 Continue
               </Button>
@@ -599,7 +635,7 @@ const Booking = () => {
           </form>
         )}
 
-        {step === 2 && (
+        {/* {step === 2 && (
           <VStack spacing="4" align="stretch">
             <Text fontWeight="bold">Review Your Information</Text>
             <Box>
@@ -629,7 +665,7 @@ const Booking = () => {
               </Button>
             </Flex>
           </VStack>
-        )}
+        )} */}
       </Box>
     </Flex>
   );
