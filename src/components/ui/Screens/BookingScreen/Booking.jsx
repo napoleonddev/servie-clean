@@ -527,15 +527,7 @@ const Booking = () => {
                     Monthly
                   </option>
                 </select>
-                {/* <Input
-                  placeholder="Enter the frequency of the service"
-                  pl="12px"
-                  value={details.frequency}
-                  onChange={(e) =>
-                    setDetails({ ...details, frequency: e.target.value })
-                  }
-                  name="frequency"
-                /> */}
+                
               </Box>
 
               <Box>
@@ -574,40 +566,6 @@ const Booking = () => {
                     House or Yard Maintenance 01_019_0120_1_1 — $56.98
                   </option>
                 </select>
-
-                {/* <Select.Root
-                  value={details.service}
-                  onValueChange={(v) => setDetails({ ...details, service: v })}
-                >
-                  <Select.HiddenSelect />
-                  <Select.Label>Select Service</Select.Label>
-
-                  <Select.Control>
-                    <Select.Trigger>
-                      <Select.ValueText placeholder="Select Service" />
-                    </Select.Trigger>
-                    <Select.IndicatorGroup>
-                      <Select.Indicator />
-                    </Select.IndicatorGroup>
-                  </Select.Control>
-
-                  <Portal>
-                    <Select.Positioner>
-                      <Select.Content>
-                        <Select.Item value="House Cleaning 01_020_0120_1_1 ($58.03)">
-                          House Cleaning And Other Household Activities
-                          01_020_0120_1_1 — $58.03
-                          <Select.ItemIndicator />
-                        </Select.Item>
-
-                        <Select.Item value="Yard Maintenance 01_019_0120_1_1 ($56.98)">
-                          House or Yard Maintenance 01_019_0120_1_1 — $56.98
-                          <Select.ItemIndicator />
-                        </Select.Item>
-                      </Select.Content>
-                    </Select.Positioner>
-                  </Portal>
-                </Select.Root> */}
               </Box>
 
               {!isComplete ? (
