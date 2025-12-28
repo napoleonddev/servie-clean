@@ -557,13 +557,12 @@ const Booking = () => {
                     Choose a service
                   </option>
 
-                  <option value="House Cleaning 01_020_0120_1_1 ($58.03)">
+                  <option value="House Cleaning 01_020_0120_1_1">
                     House Cleaning And Other Household Activities 01_020_0120_1_1
-                    — $58.03
                   </option>
 
-                  <option value="Yard Maintenance 01_019_0120_1_1 ($56.98)">
-                    House or Yard Maintenance 01_019_0120_1_1 — $56.98
+                  <option value="Yard Maintenance 01_019_0120_1_1">
+                    House or Yard Maintenance 01_019_0120_1_1
                   </option>
                 </select>
               </Box>
