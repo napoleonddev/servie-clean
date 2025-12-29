@@ -75,25 +75,20 @@ const Experience = () => {
             borderRadius="16px"
             gap="10px"
             pos={"absolute"}
-            left={300}
-            bottom={-10}
+            left={400}
+            bottom={15}
             display={{ base: 'none', md: 'flex' }}
           >
             {[
               {
                 icon: "/location",
                 text1: "Explore Nearby Services",
-                text2: "It is a long established fact that a reader.",
+                text2: "Find trusted services near you.",
               },
               {
                 icon: "/favorite",
                 text1: "View Favourite Services",
-                text2: "It is a long established fact that a reader.",
-              },
-              {
-                icon: "/call",
-                text1: "Live Chat and Call",
-                text2: "It is a long established fact that a reader.",
+                text2: "See your saved services.",
               },
             ].map((item) => (
               <VStack key={item.icon} align={"start"}>
