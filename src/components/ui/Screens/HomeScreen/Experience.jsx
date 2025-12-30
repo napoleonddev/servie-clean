@@ -38,84 +38,12 @@ const Experience = () => {
             </Box>
             <Text>Affordable Price </Text>
           </HStack>
-          {/* <HStack
-            bgColor={"#fff"}
-            p="8px"
-            borderRadius="16px"
-            gap="10px"
-            pos={"absolute"}
-            bottom={60}
-            left={30}
-            display={{ base: 'flex', md: 'none' }}
-          >
-            <Box
-              w="40px"
-              h="40px"
-              className="green"
-              borderRadius="16px"
-              display={"flex"}
-              alignItems={"center"}
-              justifyContent={"center"}
-              boxShadow={"0px 4px 10px rgba(0, 0, 0, 0.15)"}
-            >
-              <Image src="/coin-dollar.png" />
-            </Box>
-            <Text>Affordable Price </Text>
-          </HStack> */}
           <Image
             src="/cleaning-man.png"
             borderRadius={"40px"}
             objectFit={"cover"}
             zIndex={60}
           />
-          <VStack
-            bgColor={"#fff"}
-            boxShadow={"0px 4px 10px rgba(0, 0, 0, 0.15)"}
-            p="15px"
-            borderRadius="16px"
-            gap="10px"
-            pos={"absolute"}
-            left={400}
-            bottom={15}
-            display={{ base: 'none', md: 'flex' }}
-          >
-            {[
-              {
-                icon: "/location",
-                text1: "Explore Nearby Services",
-                text2: "Find trusted services near you.",
-              },
-              {
-                icon: "/favorite",
-                text1: "View Favourite Services",
-                text2: "See your saved services.",
-              },
-            ].map((item) => (
-              <VStack key={item.icon} align={"start"}>
-                <Box
-                  w="40px"
-                  h="40px"
-                  className="green"
-                  borderRadius="16px"
-                  display={"flex"}
-                  alignItems={"center"}
-                  justifyContent={"center"}
-                >
-                  <Image src={`${item.icon}.png`} />
-                </Box>
-                <Text fontWeight={700} fontSize={{ base: "10px", md: "16px" }}>
-                  {item.text1}
-                </Text>
-                <Text
-                  fontWeight={400}
-                  fontSize={{ base: "9px", md: "14px" }}
-                  textAlign={"center"}
-                >
-                  {item.text2}
-                </Text>
-              </VStack>
-            ))}
-          </VStack>
           <Image
             src="/dot.png"
             w="100px"
